@@ -5,14 +5,14 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://shkim00216.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 author:
-  name: "Viktoriya Kapitonenko"
-  last_name: "Kapitonenko"
+  name: "Sohee"
+  last_name: "Kim"
   cv: "//kaptn.ru"
   avatar: "/images/avatar.jpeg"
-  github_username: kaptn3
-  email: vika@kaptn.ru
-  vk_id: id201664979
-  telegram_name: vikapitoshka
+  github_username: shkim00216
+  email: shkim00216@gmail.com
+  # vk_id: id201664979
+  # telegram_name: vikapitoshka
   logo: "/images/logo.svg"
 
 # Build settings
