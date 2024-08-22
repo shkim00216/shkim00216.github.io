@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Lorem ipsum"
-date:   2017-06-03 00:00
-category: category1
-icon: www
-keywords: tag1, tag2
-image: 1.jpg
+title: "[JAVA] 클래스"
+date: 2024-08-22 00:00
+category: JAVA
+icon:
+keywords: JAVA
+image:
 preview: 1
 ---
 
