@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: "/sohee-blog"
+baseurl: ""
 url: "https://shkim00216.github.io/"
 
 # THEME-SPECIFIC CONFIGURATION
