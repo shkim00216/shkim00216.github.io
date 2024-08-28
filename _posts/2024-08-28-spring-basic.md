@@ -6,7 +6,7 @@ tags: [SPRING, JAVA]
 categories: SPRING
 ---
 
-### 정적 컨텐츠
+### 1. 정적 컨텐츠
 
 https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-static-content : 스프링부트 정적 컨텐츠 기능
 
@@ -14,11 +14,11 @@ https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot
 
 ---
 
-### MVC와 템플릿 엔진
+### 2. MVC와 템플릿 엔진
 
 - MVC : Model, View, Controller
 
-##### 'Controller'
+#### 'Controller'
 
 ```java
 @GetMapping("hello-mvc")
@@ -28,7 +28,7 @@ https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot
     }
 ```
 
-##### 'View'
+#### 'View'
 
 ```java
 <html xmlns:th="http://www.thymleaf.org">
@@ -45,9 +45,9 @@ https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot
 
 ---
 
-### API
+### 3. API
 
-##### @ResponseBody 문자 반환
+#### @ResponseBody 문자 반환
 
 ```java
 @GetMapping("hello-string")
@@ -62,7 +62,7 @@ https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot
 
 실행 : http://localhost:8080/hello-string?name=spring
 
-##### @ResponseBody 객체 반환
+#### @ResponseBody 객체 반환
 
 ```java
 @GetMapping("hello-api")
