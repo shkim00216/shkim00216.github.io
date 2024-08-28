@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[SPRING] 스프링 웹 개발 기초"
-date: 2024-08-23
+date: 2024-08-28
 tags: [SPRING, JAVA]
 categories: SPRING
 ---
@@ -18,7 +18,7 @@ https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot
 
 - MVC : Model, View, Controller
 
-'Controller'
+##### 'Controller'
 
 ```java
 @GetMapping("hello-mvc")
@@ -28,7 +28,7 @@ https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot
     }
 ```
 
-'View'
+##### 'View'
 
 ```java
 <html xmlns:th="http://www.thymleaf.org">
