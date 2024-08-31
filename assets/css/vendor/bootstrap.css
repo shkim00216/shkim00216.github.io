@@ -10010,5 +10010,5 @@ a.text-dark:hover, a.text-dark:focus {
 /* 240831 추가 */
 
 .post-link {
-  font-size: 1.8rem;
+  font-size: 1.8rem !important;
 }
