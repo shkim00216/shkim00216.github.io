@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[SPRING] 프로젝트 환경설정"
+title: "[SPRINGBOOT] 프로젝트 환경설정"
 date: 2024-08-23
-tags: [SPRING]
-categories: SPRING
+tags: [SPRINGBOOT]
+categories: SPRINGBOOT
 ---
 
 https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-template-engines - 스프링부트 매뉴얼

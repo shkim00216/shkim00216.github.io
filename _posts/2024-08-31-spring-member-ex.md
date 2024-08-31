@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[SPRING] 회원 관리 예제 - 백엔드 개발"
+title: "[SPRINGBOOT] 회원 관리 예제 - 백엔드 개발"
 date: 2024-08-31
-tags: [SPRING]
-categories: SPRING
+tags: [SPRINGBOOT]
+categories: SPRINGBOOT
 ---
 
 ### 일반적인 웹 애플리케이션 계층 구조

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[SPRING] 스프링 웹 개발 기초"
+title: "[SPRINGBOOT] 스프링 웹 개발 기초"
 date: 2024-08-28
-tags: [SPRING]
-categories: SPRING
+tags: [SPRINGBOOT]
+categories: SPRINGBOOT
 ---
 
 ### 1. 정적 컨텐츠
