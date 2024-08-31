@@ -2,7 +2,7 @@
 layout: post
 title: "[SPRING] 스프링 웹 개발 기초"
 date: 2024-08-28
-tags: [SPRING, JAVA]
+tags: [SPRING]
 categories: SPRING
 ---
 

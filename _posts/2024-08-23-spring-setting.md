@@ -2,7 +2,7 @@
 layout: post
 title: "[SPRING] 프로젝트 환경설정"
 date: 2024-08-23
-tags: [SPRING, JAVA]
+tags: [SPRING]
 categories: SPRING
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "[SPRING] 회원 관리 예제 - 백엔드 개발"
-date: 2024-08-29
-tags: [SPRING, JAVA]
+date: 2024-08-31
+tags: [SPRING]
 categories: SPRING
 ---
 
