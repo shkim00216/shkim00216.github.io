@@ -10005,3 +10005,10 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
+
+/* 240831 추가 */
+
+.post-link {
+  font-size: 1.8rem;
+}
