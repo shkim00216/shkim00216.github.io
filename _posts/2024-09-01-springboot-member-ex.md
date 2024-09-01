@@ -1,14 +1,18 @@
 ---
 layout: post
 title: "[SPRINGBOOT] 회원 관리 예제"
-date: 2024-08-31
+date: 2024-09-01
 tags: [SPRINGBOOT]
 categories: SPRINGBOOT
 ---
 
-### 인텔리제이 단축키 참고
+### 참고 사항
 
-key map 기준이 어떤 프로그램으로 되어 있는지 꼭 확인할 것!
+> 인텔리제이 단축키 참고   
+> - key map 기준이 어떤 프로그램으로 되어 있는지 꼭 확인할 것!
+
+> 처음 Run 실행 시 오류날 때
+> - 'cmd'에서 h2 데이터베이스 먼저 실행시켜준 뒤에 실행할 것! 
 
 ---
 
@@ -165,5 +169,45 @@ public class MemberService {}
 - 'MemoryMemberRepository' 파일에서 @Repository 어노테이션 삭제 후 정상 진행
   - 동일한 타입(MemberRepository)의 빈을 2개 등록해서 발생하는 문제
   - @Repository로 자동 빈 등록(컴포넌트 스캔의 대상)을 삭제 하여 해결이 된 것
+
+---
+
+## 4. AOP
+
+### AOP가 필요한 상황
+
+- 모든 메소드의 호출 시간을 측정하고 싶다면?
+
+### AOP란?
+
+- AOP : Aspect Oriented Programming
+- 공통 관심 사항과 핵심 관심 사항을 분리
+- 원하는 적용 대상 선택 가능, 시간 측정 로직을 별도의 공통 로직으로 만듬
+- 핵심 관심 사항을 깔끔하게 유지하며, 변경이 필요할 경우 이 로직만 변경
+
+```java
+@Component
+@Aspect
+public class TimeTraceAop {
+
+  @Around("execution(* hello.hellospring..*(..))")
+  public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
+
+    long start = System.currentTimeMillis();
+
+    System.out.println("START: " + joinPoint.toString());
+
+      try {
+        return joinPoint.proceed();
+      } finally {
+        long finish = System.currentTimeMillis();
+        long timeMs = finish - start;
+
+        System.out.println("END: " + joinPoint.toString()+ " " + timeMs +
+        "ms");
+      }
+  }
+}
+```
 
 ---
