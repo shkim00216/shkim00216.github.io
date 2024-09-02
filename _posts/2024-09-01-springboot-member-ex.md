@@ -8,11 +8,13 @@ categories: SPRINGBOOT
 
 ### 참고 사항
 
-> 인텔리제이 단축키 참고   
+> 인텔리제이 단축키 참고
+>
 > - key map 기준이 어떤 프로그램으로 되어 있는지 꼭 확인할 것!
 
 > 처음 Run 실행 시 오류날 때
-> - 'cmd'에서 h2 데이터베이스 먼저 실행시켜준 뒤에 실행할 것! 
+>
+> - 'cmd'에서 h2 데이터베이스 먼저 실행시켜준 뒤에 실행할 것!
 
 ---
 
@@ -39,7 +41,7 @@ categories: SPRINGBOOT
 - 빈(Bean) : 스프링 컨테이너에 의해 관리되는 재사용 가능한 소프트웨어 컴포넌트  
   즉, 스프링 컨테이너가 관리하는 자바 객체를 뜻하며 하나 이상의 빈(Bean)을 관리
 
-> *사용이유* : 스프링 간 객체가 의존관계를 관리하도록 하는 것에 가장 큰 목적이 있음, 객체가 의존관계를 등록할 때 스프링 컨테이너에서 해당하는 빈을 찾고, 그 빈과 의존성을 만듬
+> _사용이유_ : 스프링 간 객체가 의존관계를 관리하도록 하는 것에 가장 큰 목적이 있음, 객체가 의존관계를 등록할 때 스프링 컨테이너에서 해당하는 빈을 찾고, 그 빈과 의존성을 만듬
 
 ### 회원 컨트롤러에 의존관계 추가
 
@@ -55,11 +57,11 @@ categories: SPRINGBOOT
 
 #### [회원 서비스 스프링 빈 등록]
 
-> *참고* : 생성자에 @Autowired를 사용하면 객체 생성 시점에 스프링 컨테이너에서 해당 스프링 빈을 찾아서 주입, 생성자 1개만 있으면 생략 가능
+> _참고_ : 생성자에 @Autowired를 사용하면 객체 생성 시점에 스프링 컨테이너에서 해당 스프링 빈을 찾아서 주입, 생성자 1개만 있으면 생략 가능
 
 ### 자바 코드로 직접 스프링 빈 등록
 
-> *참고* : DI에는 필드 주입, setter 주입, 생성자 주입 이렇게 3가지 방법이 있으며, 의존관계가 실행중에 동적으로 변하는 경우는 거의 없으므로 생성자 주입을 권장
+> _참고_ : DI에는 필드 주입, setter 주입, 생성자 주입 이렇게 3가지 방법이 있으며, 의존관계가 실행중에 동적으로 변하는 경우는 거의 없으므로 생성자 주입을 권장
 
 ---
 
@@ -76,7 +78,7 @@ https://www.h2database.com/html/main.html
 - h2>bin 위치에서 'h2.bat'
 
 - 데이터베이스 파일 생성 방법
-  - jdbc:hw:~/test (최초 한번)
+  - jdbc:h2:~/test (최초 한번)
   - ~/test.mv.db 파일 생성 확인
   - jdbc:h2:tcp://localhost/~/test 접속
 
@@ -94,7 +96,7 @@ create table member
 
 #### [순수 Jdbc]
 
-build.gradle 파일에 라이브러리 추가(**Reload 필수)
+build.gradle 파일에 라이브러리 추가(\*\*Reload 필수)
 
 ```java
 implementation 'org.springframework.boot:spring-boot-starter-jdbc'
@@ -109,20 +111,21 @@ spring.datasource.driver-class-name=org.h2.Driver
 spring.datasource.username=sa
 ```
 
-> *오류* : DataSourceUtils 오류 표시 발생
+> _오류_ : DataSourceUtils 오류 표시 발생
 
 - build.gradle 파일 라이브러리 추가 및 리로드 진행 후 해결
 
 #### [회원 서비스 스프링 통합 테스트]
 
-> *오류*   
+> _오류_
+>
 > 1. h2 데이터베이스와 연동이 안됨
 > 2. 테스트 진행 시 DB 업로드 오류
 
-1. h2 'test.mv.db' 파일 제거 후 재생성(**h2 설치 참고)
+1. h2 'test.mv.db' 파일 제거 후 재생성(\*\*h2 설치 참고)
 
-2. @Transactional : 테스트 케이스에 이 애노테이션이 있으면, 테스트 완료 후 항상 롤백하므로 DB에 데이터가 남지 않음, 다음 테스트에 영향을 주지 않아 반복 테스트 가능   
-** 확인 진행 시, @Commit 애노테이션 추가 또는 @Transactional 제거
+2. @Transactional : 테스트 케이스에 이 애노테이션이 있으면, 테스트 완료 후 항상 롤백하므로 DB에 데이터가 남지 않음, 다음 테스트에 영향을 주지 않아 반복 테스트 가능  
+   \*\* 확인 진행 시, @Commit 애노테이션 추가 또는 @Transactional 제거
 
 ### JPA
 
@@ -137,6 +140,7 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
 ```
+
 - jdbc도 jpa에 포함되어 있어 제거 가능
 
 #### [JPA 설정 추가]
@@ -145,6 +149,7 @@ dependencies {
 spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=none
 ```
+
 - show-sql : JPA가 생성하는 SQL 출력
 - ddl-auto : JPA는 테이블을 자동으로 생성하는 기능 제공, none - 해당 기능 OFF
   - create를 사용하면 엔티티 정보를 바탕으로 테이블도 직접 생성
@@ -155,6 +160,7 @@ spring.jpa.hibernate.ddl-auto=none
 @Transactional
 public class MemberService {}
 ```
+
 - 스프링은 해당 클래스의 메서드를 실행할 때 트랜잭션을 시작하고, 메서드가 정상 종료되면 트랜잭션을 커밋(런타임 예외 발생 시 롤백)
 - JPA를 통한 모든 데이터 변경은 트랜잭션 안에서 실행
 
@@ -164,7 +170,7 @@ public class MemberService {}
 - 인터페이스 만으로 개발 완료 가능
 - 반복 개발해온 기본 CRUD 기능도 스프링 데이터 JPA가 모두 제공
 
-> *오류* : 순서대로 파일 코드 변경 후 통합테스트 오류 발생 (java.lang.IllegalStateException: Failed to load ApplicationContext)
+> _오류_ : 순서대로 파일 코드 변경 후 통합테스트 오류 발생 (java.lang.IllegalStateException: Failed to load ApplicationContext)
 
 - 'MemoryMemberRepository' 파일에서 @Repository 어노테이션 삭제 후 정상 진행
   - 동일한 타입(MemberRepository)의 빈을 2개 등록해서 발생하는 문제
