@@ -134,7 +134,7 @@ _Q. 추상 클래스는 언제 사용하는 것인지?_
   ```java
   public class Bus extends Car{
     public void run(){
-        super.run();  // 부모의  run()메소드를 호출
+        super.run();  // 부모의 run()메소드를 호출
         System.out.println("Bus의 run메소드");
     }
   }
