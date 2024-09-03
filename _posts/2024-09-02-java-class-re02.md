@@ -131,23 +131,23 @@ public class 클래스명 {
 
 1. 패키지 정의 방법
 
-  - package이름은 보통 도메인 이름을 거꾸로 적은 후, 그 뒤에 프로젝트 이름을 붙여서 만듬
-  - package이름은 폴더명 점 폴더명 점 폴더명 과 같은 형식으로 만들어짐, 각각의 폴더명은 숫자로 시작할 수 없음
+    - package이름은 보통 도메인 이름을 거꾸로 적은 후, 그 뒤에 프로젝트 이름을 붙여서 만듬
+    - package이름은 폴더명 점 폴더명 점 폴더명 과 같은 형식으로 만들어짐, 각각의 폴더명은 숫자로 시작할 수 없음
 
 2. 패키지에 생성된 클래스 사용하기
 
-  - 다른 패키지에 있는 클래스를 사용하려면 import 구문 적어줘야 함
+      - 다른 패키지에 있는 클래스를 사용하려면 import 구문 적어줘야 함
 
-```java
-import com.eightcrz.javastudy.*; //패키지 안에 있는 모든 파일을 쓸거임
+    ```java
+    import com.eightcrz.javastudy.*; //패키지 안에 있는 모든 파일을 쓸거임
 
-public class HelloExam {
+    public class HelloExam {
 
-	public static void main(String[] args) {
-		Hello hello = new Hello();
-    //hello 클래스가 정의되지 않음 -> import해줘야 함(Ctrl+Shift+O)
-  }
-}
-```
+      public static void main(String[] args) {
+        Hello hello = new Hello();
+        //hello 클래스가 정의되지 않음 -> import해줘야 함(Ctrl+Shift+O)
+      }
+    }
+    ```
 
 ---
