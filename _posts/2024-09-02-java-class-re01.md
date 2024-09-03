@@ -37,23 +37,23 @@ public class 클래스명 {
 
 1. new 연산자를 이용하지 않고 인스턴스를 만드는 경우
 
-```java
-String str1 = "hello";
-String str2 = "hello";
-```
+    ```java
+    String str1 = "hello";
+    String str2 = "hello";
+    ```
 
-  - "hello"라는 문자열이 메모리 중에서 상수가 저장되는 영역에 저장, 상수 -> 변하지 않는 값
-  - str1이 참조하는 인스턴스를 str2도 참조
+    - "hello"라는 문자열이 메모리 중에서 상수가 저장되는 영역에 저장, 상수 -> 변하지 않는 값
+    - str1이 참조하는 인스턴스를 str2도 참조
 
 2. new 연산자를 이용해서 인스턴스를 만드는 경우
 
-```java
-String str3 = new String("hello");
-String str4 = new String("hello");
-```
+    ```java
+    String str3 = new String("hello");
+    String str4 = new String("hello");
+    ```
 
-  - new 연산자를 이용하여 인스턴스를 만들면 인스턴스는 무조건 새롭게 만들어짐
-  - str3과 str4는 서로 다른 인스턴스 참조
+      - new 연산자를 이용하여 인스턴스를 만들면 인스턴스는 무조건 새롭게 만들어짐
+      - str3과 str4는 서로 다른 인스턴스 참조
 
 > string은 불변 클래스로 인스턴스가 될 때 가지고 있던 값을 나중에 수정할 수 없음
 
@@ -115,27 +115,27 @@ System.out.println(c1.name);
 
 2. 매개변수O, 리턴값X
 
-  - 받아들이는 값 : 타입 상관 없음 / 여러 개일 경우 콤마(,)로 구분
+    - 받아들이는 값 : 타입 상관 없음 / 여러 개일 경우 콤마(,)로 구분
 
-```java
-public void method2(int x){
-  System.out.println(x + " 를 이용하는 method2입니다.");
-}
-```
+    ```java
+    public void method2(int x){
+      System.out.println(x + " 를 이용하는 method2입니다.");
+    }
+    ```
 
 3. 매개변수X, 리턴값O
 
-   - 리턴하는 값 앞에 return
-   - 메소드 이름 앞 : 리턴하는 타입
+    - 리턴하는 값 앞에 return
+    - 메소드 이름 앞 : 리턴하는 타입
 
-   ```java
-   public int method3(){
-     System.out.println("method3이 실행됩니다.");
+    ```java
+    public int method3(){
+      System.out.println("method3이 실행됩니다.");
 
-     return 10;
-   }
-   //위 메소드가 실행되면, 콘솔에 'method3이 실행됩니다.' 를 출력하고, 이 메소드를 호출한 쪽에 10을 리턴한다.
-   ```
+      return 10;
+    }
+    //위 메소드가 실행되면, 콘솔에 'method3이 실행됩니다.' 를 출력하고, 이 메소드를 호출한 쪽에 10을 리턴한다.
+    ```
 
 4. 매개변수 2개, 리턴값X
 
