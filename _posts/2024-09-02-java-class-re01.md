@@ -115,13 +115,13 @@ System.out.println(c1.name);
 
 2. 매개변수O, 리턴값X
 
-   - 받아들이는 값 : 타입 상관 없음 | 여러 개일 경우 콤마(,)로 구분
+- 받아들이는 값 : 타입 상관 없음 / 여러 개일 경우 콤마(,)로 구분
 
-   ```java
-   public void method2(int x){
-     System.out.println(x + " 를 이용하는 method2입니다.");
-   }
-   ```
+```java
+public void method2(int x){
+  System.out.println(x + " 를 이용하는 method2입니다.");
+}
+```
 
 3. 매개변수X, 리턴값O
 
