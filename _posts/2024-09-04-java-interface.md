@@ -128,7 +128,7 @@ categories: JAVA
 
 2. 정적 중첩 클래스 = static 클래스 : 내부 클래스가 static으로 정의된 경우
 
-   - 필드 선언할 때 스태틱한 필드로 선언한 것과 같음
+   - 필드 선언할 때 static한 필드로 선언한 것과 같음
 
    ```java
    public class InnerExam2{
@@ -177,3 +177,29 @@ categories: JAVA
 ---
 
 #### 5. 익명 클래스
+
+> 익명 중첩 클래스는 익명 클래스라고 보통 말하며, 내부 클래스이기도 함
+
+```java
+public class ActionExam {
+
+	public static void main(String[] args) {
+		Action action = new Action() {
+
+			@Override
+			public void exec() {
+				System.out.println("exec");
+			}
+		}; //MyAction을 사용하지 않고 Action을 상속받는 익명 클래스를 만들어서 사용하도록 수정
+		action.exec();
+	}
+
+}
+
+```
+
+- 생성자 다음에 중괄호가 나오면, 생성자 이름에 해당하는 클래스를 상속받는 이름없는 객체를 만든다는 것
+- 이렇게 생성된 이름 없는 객체를 action이라는 참조변수가 참조하도록 함
+- Action을 상속받는 클래스가 해당 클래스에서만 사용되고 다른 클래스에서는 사용되지 않음
+
+---
