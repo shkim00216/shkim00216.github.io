@@ -39,3 +39,5 @@ int value = array1[2];
 System.out.println(array1[1]);
 //array1 이 참조하는 배열의 1번 인덱스에 해당하는 값 2가 콘솔에 출력
 ```
+
+---
