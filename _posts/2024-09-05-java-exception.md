@@ -140,3 +140,5 @@ public class FileInputStream implements AutoCloseable {
 - ClassNotFoundException : 애플리케이션이 클래스의 이름으로 클래스 로드를 시도했을 때 classpath에서 해당 클래스를 찾을 수 없을 때 발생하는 예외
 - ArrayIndexOutOfBoundsException : 배열의 인덱스가 초과되었을 경우 발생
 - NumberFormatException : 숫자타입이 아닐 때 발생
+
+---
