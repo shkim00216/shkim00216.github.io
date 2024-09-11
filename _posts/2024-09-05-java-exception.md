@@ -11,6 +11,9 @@ categories: JAVA
 > 예외 : 프로그램 실행 중 예기치 못한 사건  
 > 예외 처리 : 예외 상황을 미리 예측하고 처리할 수 있음
 
+- 일반 예외(Exception) : 컴파일러가 예외 처리 코드 여부를 검사하는 예외
+- 실행 예외(Runtime Exception) : 컴파일러가 예외 처리 코드 여부를 검사하지 않는 예외
+
 ```java
 try {
   ... //수행할 코드, 예외 발생 가능성이 있는 블록
@@ -21,12 +24,16 @@ try {
 }
 ```
 
+##### [예외 정보를 얻는 3가지 방법]
+
 1. 예외클래스변수명.getMessage() : 발생한 예외 클래스의 인스턴스에 저장된 메세지를 얻을 수 있음 -> 아주 간단한 정보만 보여줌
 2. 예외클래스변수명.toString() : getMessage() + 예외의 정보를 알려주는 메소드
 3. 예외클래스변수명.printStackTrace() : getMessage() + 어떤 예외가 발생했는지와 에러가 발생한 위치까지 보여줌
 
-- ArithmeticException 이란?
-  - 나누기 0을 하면 발생하는 에러
+
+- catch 블록이 여러 개여도 해당 예외의 catch 블록 단 하나만 실행
+- 처리해야 할 예외 클래스들이 상속 관계에 있을 때는 하위 클래스 catch 블록 먼저 생성
+  - 예외 발생 시 위에서부터 차례대로 검사
 - 예외클래스 Exception : 모든 오류 처리하는 예외클래스
   - 어떤 Exception이 발생할지 모를 때는 catch(Exception e)와 같이 Exception 클래스 이용
 
@@ -34,7 +41,7 @@ try {
 
 #### 2. Throws
 
-> throws는 예외가 발생했을때 예외를 호출한 쪽에서 처리하도록 던져줌
+> 예외 떠넘기기 : throws는 예외가 발생했을때 예외를 호출한 쪽에서 처리하도록 던져줌
 
 ```java
 public static int divide(int i, int j) throws ArithmeticException {
@@ -56,8 +63,6 @@ if(j == 0){
 } //직접 오류 발생시키고, 호출한 쪽에서 예외 처리 진행
 ```
 
-- IllegalArgument 이란?
-  - 적합하지 않거나 적절하지 못한 인자를 메소드에 넘겨주었을 때 발생
 - if문으로 적절하지 않은 값 리턴 시 값이 정확하지 않아 문제가 생길 수 있음
 
 ---
@@ -96,3 +101,8 @@ public class MyCheckedException extends Exception{
 ```
 
 ---
+
+#### 5. 예외 모음
+
+- ArithmeticException : 나누기 0을 하면 발생하는 예외
+- IllegalArgument : 적합하지 않거나 적절하지 못한 인자를 메소드에 넘겨주었을 때 발생

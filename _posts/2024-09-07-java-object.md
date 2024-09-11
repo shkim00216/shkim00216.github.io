@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[JAVA] Object 클래스"
-date: 2024-09-09
+date: 2024-09-07
 tags: [JAVA]
 categories: JAVA
 ---

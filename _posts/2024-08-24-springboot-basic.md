@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[SPRINGBOOT] 스프링 웹 개발 기초"
-date: 2024-08-28
+date: 2024-08-24
 tags: [SPRINGBOOT]
 categories: SPRINGBOOT
 ---
