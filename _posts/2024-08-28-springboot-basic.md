@@ -30,7 +30,7 @@ https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot
 
 #### 'View'
 
-```java
+```html
 <html xmlns:th="http://www.thymleaf.org">
 <body>
   <p th:text="'hello ' + ${name}">hello! empty</p>

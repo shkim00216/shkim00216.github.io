@@ -84,7 +84,7 @@ https://www.h2database.com/html/main.html
 
 #### [테이블 생성하기]
 
-```java
+```sql
 drop table if exists member CASCADE;
 create table member
 (
