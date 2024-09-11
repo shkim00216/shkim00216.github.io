@@ -118,7 +118,7 @@ try(FileInputStream fis = new FileInputStream("file.txt")) {
 } //try-with-resources 블록을 사용하여 리소스 자동 닫기 실행
 ```
 
-- 위와 같은 블록을 사용하기 위해서는 AutoCloseable 인터페이의 close() 메소드 재정의 필요
+- 위와 같은 블록을 사용하기 위해서는 AutoCloseable 인터페이스의 close() 메소드 재정의 필요
 
 ```java
 public class FileInputStream implements AutoCloseable {
