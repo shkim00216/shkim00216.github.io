@@ -123,7 +123,7 @@ categories: SPRINGBOOT
 1. dependencies 추가
 2. application.properties -> application.yml로 이름 변경
 
-   ```java
+   ```yml
    # server port
      server:
        port: 8080
