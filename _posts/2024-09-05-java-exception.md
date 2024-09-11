@@ -37,6 +37,8 @@ try {
 - 예외클래스 Exception : 모든 오류 처리하는 예외클래스
   - 어떤 Exception이 발생할지 모를 때는 catch(Exception e)와 같이 Exception 클래스 이용
 
+*Q. 예외가 발생하는 상황은 어떻게 예측하는가?*
+
 ---
 
 #### 2. Throws
@@ -102,7 +104,39 @@ public class MyCheckedException extends Exception{
 
 ---
 
-#### 5. 예외 모음
+#### 5. 리소스 자동 닫기
+
+> 리소스 : 데이터를 제공하는 객체   
+> 리소스는 사용하기 위해 열어야 하며, 사용이 끝난 다음에는 닫아야 함   
+> 리소스를 사용하다가 예외가 발생될 경우에도 안전하게 닫는 것이 중요함(리소스 불안정 상태 때문)
+
+```java
+try(FileInputStream fis = new FileInputStream("file.txt")) {
+  ...
+} catch(IOException e) {
+  ...
+} //try-with-resources 블록을 사용하여 리소스 자동 닫기 실행
+```
+
+- 위와 같은 블록을 사용하기 위해서는 AutoCloseable 인터페이의 close() 메소드 재정의 필요
+
+```java
+public class FileInputStream implements AutoCloseable {
+  ...
+  @Override
+  public void close() throws Exception {
+    ...
+  }
+}
+```
+
+---
+
+#### 6. 예외 모음
 
 - ArithmeticException : 나누기 0을 하면 발생하는 예외
 - IllegalArgument : 적합하지 않거나 적절하지 못한 인자를 메소드에 넘겨주었을 때 발생
+- NullPointerException : 참조 변수가 null인 상태에서 필드나 메소드에 접근할 경우 발생
+- ClassNotFoundException : 애플리케이션이 클래스의 이름으로 클래스 로드를 시도했을 때 classpath에서 해당 클래스를 찾을 수 없을 때 발생하는 예외
+- ArrayIndexOutOfBoundsException : 배열의 인덱스가 초과되었을 경우 발생
+- NumberFormatException : 숫자타입이 아닐 때 발생
