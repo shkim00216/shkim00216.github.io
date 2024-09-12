@@ -6,13 +6,13 @@ tags: [SPRINGBOOT]
 categories: SPRINGBOOT
 ---
 
-### 깃허브 참고하기
+#### 깃허브 참고하기
 
 https://github.com/codingrecipe1/board_springboot_mybatis
 
 ---
 
-### 개발환경
+#### 개발환경
 
 - IntelliJ IDEA Community Edition 2023.3.3
 - Amazon Corretto 21
@@ -23,7 +23,7 @@ https://github.com/codingrecipe1/board_springboot_mybatis
 
 ---
 
-### dependencies
+#### dependencies
 
 - Spring Web
   - MVC 패턴 구현을 위한
