@@ -1,25 +1,18 @@
 ---
 layout: post
-title: "[SPRINGBOOT] 게시판 만들어보기"
-date: 2024-09-12
+title: "[SPRINGBOOT] 게시판 만들어보기 - 02"
+date: 2024-09-13
 tags: [SPRINGBOOT]
 categories: SPRINGBOOT
 ---
 
-#### 깃허브 참고하기
-
-https://github.com/codingrecipe1/board_springboot_mybatis
-
----
-
 #### 개발환경
 
-- IntelliJ IDEA Community Edition 2024.2.1
-- Amazon Corretto 21
+- Spring Tool Suite 4
 - mysql community server 8.0
 - spring boot 3.2.9
 - mybatis framework
-- thymeleaf
+- JSP
 
 ---
 
@@ -28,14 +21,10 @@ https://github.com/codingrecipe1/board_springboot_mybatis
 - Spring Web
   - MVC 패턴 구현을 위한
 - Lombok
-- thymeleaf
 - Spring Boot DevTools
   - 코드 수정 시 자동으로 서버 재시작
-
-##### DB 연동시
-
-- MyBatis Framework
-- MySQL Driver
+- MySQL
+- mybatis
 
 ---
 
