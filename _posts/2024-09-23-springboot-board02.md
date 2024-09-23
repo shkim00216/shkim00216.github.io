@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[SPRINGBOOT] 게시판 만들어보기 - 02"
-date: 2024-09-13
+date: 2024-09-23
 tags: [SPRINGBOOT]
 categories: SPRINGBOOT
 ---
