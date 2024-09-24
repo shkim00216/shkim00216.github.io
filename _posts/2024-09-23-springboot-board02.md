@@ -225,7 +225,7 @@ void save() {
 
 ```xml
 <!-- 게시글 저장 -->
-<insert id="save" parameterType="com.project.miniProject.notice.vo.PostRequest" useGeneratedKeys="true" keyProperty="uid">
+<insert id="save" parameterType="com.project.miniProject.notice.vo.PostRequest" useGeneratedKeys="true" keyProperty="id">
   insert into notice_tb (<include refid="noticeColumns"></include>) values (#{uid}, #{title}, #{content}, #{writer}, now())
 </insert>
 <!-- useGeneratedKeys true 설정 시 게시글의 PK가 Request객체에 저장, keyProperty에 선언된 id에 값이 매핑 -->
@@ -244,6 +244,51 @@ implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
 implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
 ```
 
+- 테이블 형태로는 뜨는데 값이 뜨지 않는 오류 발생
+
+    https://blog.naver.com/simpolor/221301210063
+
+```java
+@Getter
+public class PostResponse {
+	
+	//게시글 응답 클래스
+	private Long id; 
+	private String title; 
+	private String content; 
+	private String writer; 
+	private Date regDate; //Date로 객체 생성해줘야 함
+}
+//table 컬럼명과 객체명 맞춰줘야 데이터 값 들어감, LocalDateTime 사용 시 jsp에서 설정 못하므로 백단에서 따로 설정해줘야 함
+```
+
+- jsp 코드로 변환
+
+```jsp
+//noticeList.jsp
+<c:if test="${not empty posts}">
+  <c:forEach var="row" varStatus="status" items="${posts}">
+    <tr>
+      <td><input type="checkbox" /></td>
+      <td>${row.id}</td>
+      <td>
+        <a href="<c:url value='/post/view.do'/>?id=${row.id}"
+          >${row.title}</a
+        >
+      </td>
+      <td>${row.writer}</td>
+      <!-- 날짜 포맷팅 -->
+      <td>
+        <fmt:formatDate
+          value="${row.regDate}"
+          pattern="yyyy-MM-dd"
+        />
+      </td>
+    </tr>
+  </c:forEach>
+</c:if>
+```
+
 ---
 
 #### 문제 해결
@@ -255,42 +300,3 @@ implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
 2. 이클립스 자동 import 설정
 
    https://hianna.tistory.com/652
-
-3. DB 연동 및 빈 설정 후 단위테스트 오류
-
-   ```java
-   //빈 설정 변경(HikariConfig 직접 설정 - 모든 필수 속성을 명시적으로 설정)
-   //우선 mapper 경로 막아두기
-   @Configuration
-   @PropertySource("classpath:/application.properties")
-   public class DBConfig {
-
-       @Autowired
-       private ApplicationContext context;
-
-       @Bean
-       public DataSource dataSource() {
-         HikariConfig hikariConfig = new HikariConfig();
-         hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
-         hikariConfig.setJdbcUrl("jdbc:mysql://localhost:3306/notice?serverTimeZone=Asia/Seoul&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true");
-         hikariConfig.setUsername("root");
-         hikariConfig.setPassword("1234");
-         HikariDataSource dataSource = new HikariDataSource(hikariConfig);
-         return dataSource;
-       }
-
-       @Bean
-       public SqlSessionFactory sqlSessionFactory() throws Exception {
-           SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
-           factoryBean.setDataSource(dataSource());
-   //		factoryBean.setMapperLocations(context.getResources("classpath:/mybatis/mappers/*.xml"));
-           return factoryBean.getObject();
-       }
-
-       @Bean
-       public SqlSessionTemplate sqlSession() throws Exception {
-           return new SqlSessionTemplate(sqlSessionFactory());
-       }
-
-   }
-   ```
