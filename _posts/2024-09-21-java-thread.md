@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[JAVA] 쓰레드"
-date: 2024-09-14
+date: 2024-09-21
 tags: [JAVA]
 categories: JAVA
 ---
