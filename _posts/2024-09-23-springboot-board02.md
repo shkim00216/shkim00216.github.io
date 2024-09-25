@@ -35,13 +35,18 @@ categories: SPRINGBOOT
 - application.properties 추가
 
   ```properties
+  spring.application.name=miniProject
+
   # port
-  server.port=8088
+  server.port=8086
 
   # JSP view
-  <!-- jsp 설정 따로 해줘야 함 -->
   spring.mvc.view.prefix=/WEB-INF/views/
   spring.mvc.view.suffix=.jsp
+
+  # devtools
+  spring.devtools.livereload.enabled=true
+  spring.devtools.restart.enabled=false
 
   # encoding
   server.servlet.encoding.charset=UTF-8
@@ -49,10 +54,15 @@ categories: SPRINGBOOT
   server.servlet.encoding.force=true
 
   # MySQL8.0
-  spring.datasource.url=jdbc:mysql://localhost:3306/notice?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+  spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+  spring.datasource.hikari.jdbc-url=jdbc:mysql://localhost:3306/notice?useSSL=false&characterEncoding=UTF-8&serverTimeZone=UTC
   spring.datasource.username=root
   spring.datasource.password=1234
-  spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+  spring.datasource.hikari.connection-test-query=SELECT NOW() FROM dual
+
+  # mybatis
+  mybatis.mapper-locations=classpath:classpath:/mapper/**/*.xml
+  #mybatis.configuration.map-underscore-to-camel-case=true
   ```
 
 - gradle 따로 refresh 해줌
@@ -140,15 +150,6 @@ class NoticeBatch {
 ---
 
 #### DB 연동 및 빈 설정, 단위테스트
-
-```properties
-# MySQL8.0
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.datasource.hikari.jdbc-url=jdbc:mysql://localhost:3306/notice?useSSL=false&characterEncoding=UTF-8&serverTimeZone=UTC
-spring.datasource.username=root
-spring.datasource.password=1234
-spring.datasource.hikari.connection-test-query=SELECT NOW() FROM dual
-```
 
 ```java
 //단위테스트 코드
@@ -246,17 +247,17 @@ implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
 
 - 테이블 형태로는 뜨는데 값이 뜨지 않는 오류 발생
 
-    https://blog.naver.com/simpolor/221301210063
+  https://blog.naver.com/simpolor/221301210063
 
 ```java
 @Getter
 public class PostResponse {
-	
+
 	//게시글 응답 클래스
-	private Long id; 
-	private String title; 
-	private String content; 
-	private String writer; 
+	private Long id;
+	private String title;
+	private String content;
+	private String writer;
 	private Date regDate; //Date로 객체 생성해줘야 함
 }
 //table 컬럼명과 객체명 맞춰줘야 데이터 값 들어감, LocalDateTime 사용 시 jsp에서 설정 못하므로 백단에서 따로 설정해줘야 함
@@ -288,6 +289,24 @@ public class PostResponse {
   </c:forEach>
 </c:if>
 ```
+
+---
+
+#### 게시글 상세정보 조회 및 수정
+
+- 상세 페이지 확인 시 오류 발생
+
+```java
+//게시글 상세 페이지
+@GetMapping("/notice/view.do")
+public String openPostView(@RequestParam("id") final Long id, Model model) {
+  PostResponse post = noticeService.findPostById(id);
+  model.addAttribute("post", post);
+  return "notice/noticeView";
+} //@RequestParam("id")에 매개변수값 넣어줘야 정상 작동
+```
+
+- noticeInsert.jsp javascript 코드 오류 발생
 
 ---
 
