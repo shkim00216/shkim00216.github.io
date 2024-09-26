@@ -6,6 +6,10 @@ tags: [SPRINGBOOT]
 categories: SPRINGBOOT
 ---
 
+https://congsong.tistory.com/category/Spring%20Boot 참고
+
+---
+
 #### 개발환경
 
 - Spring Tool Suite 4
@@ -307,6 +311,148 @@ public String openPostView(@RequestParam("id") final Long id, Model model) {
 ```
 
 - noticeInsert.jsp javascript 코드 오류 발생
+
+```jsp
+//noticeInsert.jsp
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script> //dayjs 라이브러리 추가
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/plugin/customParseFormat.min.js"></script>
+<script>
+  dayjs.extend(dayjs_plugin_customParseFormat);
+</script>
+<script type="text/javascript">
+  window.onload = () => {
+    renderPostInfo();
+  };
+
+  // 게시글 상세정보 렌더링
+  function renderPostInfo() {
+    const post = "${post}";
+
+    // 문자열에서 'PostResponse('와 ')' 제거
+    const postFormatted = post
+      .replace("PostResponse(", "")
+      .replace(")", "");
+
+    if (!post) {
+      initCreatedDate();
+      return false;
+    }
+
+    // 각 속성 값을 파싱하여 객체 생성
+    const postParts = postFormatted.split(", ").reduce((acc, part) => {
+      const [key, value] = part.split("=");
+      acc[key.trim()] = value.trim();
+      return acc;
+    }, {});
+    console.log(postParts);
+
+    const form = document.getElementById("saveForm");
+    const fields = ["id", "title", "content", "writer", "regDate"];
+
+    fields.forEach((field) => {
+      form[field].value = postParts[field];
+    });
+  }
+
+  // 등록일 초기화
+  function initCreatedDate() {
+    document.getElementById("regDate").value = dayjs().format("YYYY-MM-DD");
+  }
+
+  // 게시글 저장(수정)
+  function savePost() {
+    const form = document.getElementById("saveForm");
+    const fields = [form.title, form.writer, form.content];
+    const fieldNames = ["제목", "작성자", "내용"];
+
+    for (let i = 0; i < fields.length; i++) {
+      isValid(fields[i], fieldNames[i]);
+    }
+
+    document.getElementById("saveBtn").disabled = true;
+    // form.noticeYn.value = form.isNotice.checked;
+    const post = "${post}";
+    if (!post) {
+      form.action = "/notice/save.do";
+    } else {
+      form.action = "/notice/update.do";
+    }
+    form.submit();
+  }
+
+  function isValid(field, name) {
+    if (!field.value.trim()) {
+      alert(name + "을(를) 입력해 주세요.");
+      field.focus();
+      throw new Error(name + "이(가) 입력되지 않았습니다.");
+    }
+  }
+</script>
+//post 값이 제대로 나오지 않아 코드 수정
+//게시글 수정 및 저장 시에 action 코드 수정
+//아직 수정 시에 값 렌더링 후 날짜값 포맷 변경 불가...
+```
+
+```jsp
+//noticeInsert.jsp
+fields.forEach((field) => {
+  if (field === "regDate") {
+    da = postParts[field];
+    const fieldFormatted = da.replace("KST", "");
+    form[field].value = dayjs(fieldFormatted).format("YYYY-MM-DD");
+  } else {
+    form[field].value = postParts[field];
+  }
+});
+//위에서 못한 날짜값 포맷 성공함...!!
+```
+
+---
+
+#### 게시글 삭제 구현
+
+```jsp
+//noticeView.jsp
+<script type="text/javascript">
+  // 게시글 삭제
+  function deletePost() {
+    const id = "${post.id}";
+
+    if (!confirm(id + "번 게시글을 삭제할까요?")) {
+      return false;
+    }
+
+    const formHtml = `
+          <form id="deleteForm" action="${pageContext.request.contextPath}/notice/delete.do" method="post">
+              <input type="hidden" id="id" name="id" value="${post.id}" />
+          </form>
+      `;
+    const doc = new DOMParser().parseFromString(formHtml, "text/html");
+    const form = doc.body.firstChild;
+    document.body.append(form);
+    document.getElementById("deleteForm").submit();
+  }
+</script>
+```
+
+---
+
+#### 컨트롤러 Alert 메시지 처리
+
+- messageRedirect.jsp 코드 수정
+
+```jsp
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.Map.Entry" %>
+//jsp 페이지에 임포트 추가
+```
+
+---
+
+#### 로그 출력
+
+- 인터셉트 로그 출력은 완료했으나, sql 쿼리 로그가 찍히지 않음
+  - log4j2 로그 설정에 대해 더 알아볼 것 !
 
 ---
 
