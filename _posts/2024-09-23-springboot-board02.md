@@ -456,6 +456,19 @@ fields.forEach((field) => {
 
 ---
 
+#### 페이징 & 검색 기능 구현
+
+https://congsong.tistory.com/26
+
+```sql
+-- 게시글 테이블 초기화
+TRUNCATE notice.notice_tb
+```
+
+- 페이지네이션 기능 구현 성공(수식 이해 해야 함)
+
+---
+
 #### 문제 해결
 
 1. sts 환경에서 Lombok 설치
@@ -465,3 +478,7 @@ fields.forEach((field) => {
 2. 이클립스 자동 import 설정
 
    https://hianna.tistory.com/652
+
+3. jsp ``안에 ${} 변수값 적용 안됨
+
+   https://hyeon21.tistory.com/56 : 앞에 \붙여주고 해결
