@@ -130,6 +130,7 @@ main {
 #title {
   a {
     text-decoration: none;
+    font-weight: 700;
   }
 }
 .social {
@@ -250,11 +251,6 @@ main {
 }
 .dark .posts > li:hover {
   background-color: rgba($color: #000, $alpha: 0.2);
-}
-.posts {
-  li:nth-child(1):hover {
-    background-color: none;
-  }
 }
 .post-container {
   padding-left: 30px;
