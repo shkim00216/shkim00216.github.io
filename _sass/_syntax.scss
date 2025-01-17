@@ -16,12 +16,20 @@ code {
 }
 
 .language-plaintext {
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: #f4f4f4;
   color: #586e75;
-  padding: 2px;
+  padding: 2px 4px;
 }
-.blockquote::before {
+.dark .language-plaintext {
+  background-color: #00080a;
+  color: #93a1a1;
+}
+blockquote {
+  display: flex;
+  align-items: center;
+}
+blockquote::before {
   display: block;
   content: "";
   background-color: #ddd;
