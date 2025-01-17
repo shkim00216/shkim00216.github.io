@@ -26,13 +26,8 @@ code {
   color: #93a1a1;
 }
 blockquote {
-  display: flex;
-  align-items: center;
-}
-blockquote::before {
-  display: block;
-  content: "";
-  background-color: #ddd;
-  width: 2px;
-  height: 100%;
+  border-left: 2px solid #b1c9ef;
+  padding-left: 1rem;
+  margin-left: 0;
+  background-color: #f0f3fa;
 }
