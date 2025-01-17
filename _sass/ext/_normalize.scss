@@ -216,6 +216,10 @@ hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
+  border-color: #fff;
+}
+.dark hr {
+  border-color: #222;
 }
 
 //
