@@ -248,6 +248,9 @@ main {
 .posts > li:hover {
   background-color: rgba($color: #000, $alpha: 0.1);
 }
+.dark .posts > li:hover {
+  background-color: rgba($color: #000, $alpha: 0.2);
+}
 .posts {
   li:nth-child(1):hover {
     background-color: none;
