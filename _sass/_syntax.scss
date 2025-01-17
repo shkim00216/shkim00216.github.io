@@ -21,3 +21,10 @@ code {
   color: #586e75;
   padding: 2px;
 }
+.blockquote::before {
+  display: block;
+  content: "";
+  background-color: #ddd;
+  width: 2px;
+  height: 100%;
+}
