@@ -11,7 +11,7 @@ sass:
 plainwhite:
   name: sohee
   tagline: Front-end Developer
-  date_format: "%b %-d, %Y"
+  date_format: "%Y %m %-d"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
   dark_mode: true # set to true to add dark mode toggle
@@ -23,9 +23,9 @@ plainwhite:
     - post
   # generate social links in footer
   social_links:
-    twitter: samarsault
-    github: samarsault
-    linkedIn: in/samarsault
+    # twitter: samarsault
+    github: https://github.com/shkim00216
+    # linkedIn: in/samarsault
     #dribbble: jekyll
     #flickr:   jekyll
     #instagram: jekyll
@@ -35,7 +35,7 @@ plainwhite:
     #soundcloud: jekyll
     #telegram: jekyll
     #gitlab: jekyll
-    #email: jekyll
+    email: shkim00216@gmail.com
 
     # Mastodon instances
     # mastodon:
