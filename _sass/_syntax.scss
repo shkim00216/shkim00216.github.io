@@ -1,14 +1,23 @@
-@import 'ext/solarized-light';
+@import "ext/solarized-light";
 
 .highlight {
-	background-color: #f4f4f4;
+  background-color: #f4f4f4;
 }
 
 div.highlight {
-	padding: 5px 20px;
+  padding: 5px 20px;
+  margin-bottom: 10px;
 }
-pre.highlight, code {
-	font-family: 'Consolas', Menlo, monospace;
-	line-height: 1.4em;
-	tab-size: 4;
+pre.highlight,
+code {
+  font-family: "Consolas", Menlo, monospace;
+  line-height: 1.4em;
+  tab-size: 4;
+}
+
+.language-plaintext {
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  color: #586e75;
+  padding: 2px;
 }
