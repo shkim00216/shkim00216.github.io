@@ -11,7 +11,7 @@ sass:
 plainwhite:
   name: sohee
   tagline: Front-end Developer
-  date_format: "%Y %m %-d"
+  date_format: "%Y. %m. %-d"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
   dark_mode: true # set to true to add dark mode toggle
