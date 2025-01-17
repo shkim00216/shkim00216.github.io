@@ -240,7 +240,7 @@ main {
   }
 }
 .posts > li {
-  padding: 16px;
+  padding: 16px 20px;
   border-radius: 20px;
   margin-bottom: 16px;
   border-bottom: 1px solid #ddd;
@@ -248,8 +248,10 @@ main {
 .posts > li:hover {
   background-color: rgba($color: #000, $alpha: 0.1);
 }
-.posts > li:nth-child(1):hover {
-  background-color: none;
+.posts {
+  li:nth-child(1):hover {
+    background-color: none;
+  }
 }
 .post-container {
   padding-left: 30px;
