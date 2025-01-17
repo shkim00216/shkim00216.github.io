@@ -239,6 +239,15 @@ main {
     margin-top: 0;
   }
 }
+.posts > li:first-child {
+  background-color: none;
+  padding: 0;
+}
+.posts > li {
+  padding: 16px;
+  background-color: rgba($color: #000, $alpha: 0.4);
+  border-radius: 20px;
+}
 .post-container {
   padding-left: 30px;
 }
