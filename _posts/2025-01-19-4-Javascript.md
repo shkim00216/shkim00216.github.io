@@ -16,21 +16,21 @@ categories: Javascript
 
 ### [변수와 상수 만들기]
 
-1. 선언(declaration)
+#### 1. 선언(declaration)
 
-   - 변수의 이름을 알려주는 행위
+- 변수의 이름을 알려주는 행위
 
-   ```javascript
-   let apple;
-   ```
+```javascript
+let apple;
+```
 
-2. 할당(definition)
+#### 2. 할당(definition)
 
-   - 변수에 데이터를 담아주는 행위
+- 변수에 데이터를 담아주는 행위
 
-   ```javascript
-   apple = "맛있는 사과";
-   ```
+```javascript
+apple = "맛있는 사과";
+```
 
 #### \* 선언과 할당을 한번에!
 
@@ -179,13 +179,13 @@ chulsooNumber.padStart(10, "0"); // "0000001234"
 chulsooNumber.padEnd(10, "0"); // "1234000000"
 ```
 
-#### \* 실무 예제
+### \* 실무 예제
 
-1. split() 기능
+#### 1. split() 기능
 
-   - 아이디/이메일을 `rosa.ka**@gmail.com`처럼 \*\*마스킹해야 할 때 사용
+- 아이디/이메일을 `rosa.ka**@gmail.com`처럼 \*\*마스킹해야 할 때 사용
 
-2. toUpperCase, toLowerCase 기능
+#### 2. toUpperCase, toLowerCase 기능
 
-   - 사용자가 검색 기능을 사용할 때 문자열의 `toUpperCase, toLowerCase` 사용
-   - 컴퓨터에 저장된 단어, 내가 찾을 단어를 모두 소문자 또는 대문자로 변경하고 찾아냄
+- 사용자가 검색 기능을 사용할 때 문자열의 `toUpperCase, toLowerCase` 사용
+- 컴퓨터에 저장된 단어, 내가 찾을 단어를 모두 소문자 또는 대문자로 변경하고 찾아냄
