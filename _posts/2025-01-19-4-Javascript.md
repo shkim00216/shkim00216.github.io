@@ -18,19 +18,19 @@ categories: Javascript
 
 1. 선언(declaration)
 
-- 변수의 이름을 알려주는 행위
+   - 변수의 이름을 알려주는 행위
 
-```javascript
-let apple;
-```
+   ```javascript
+   let apple;
+   ```
 
 2. 할당(definition)
 
-- 변수에 데이터를 담아주는 행위
+   - 변수에 데이터를 담아주는 행위
 
-```javascript
-apple = "맛있는 사과";
-```
+   ```javascript
+   apple = "맛있는 사과";
+   ```
 
 #### \* 선언과 할당을 한번에!
 
@@ -61,8 +61,8 @@ classmate3 = "짱구"; // 성공!!
 
 ### [변수와 상수의 작명 규칙]
 
-- camelCase : let myMoney -> js
-- snake_case : my_money -> python
+- `camelCase` : let myMoney -> js
+- `snake_case` : my_money -> python
 
 ---
 
@@ -151,7 +151,7 @@ classmates.map((data) => data + "어린이"); // ["철수어린이", "영희어�
 
 ## #문자열
 
-- 문자열도 배열과 같이 메서드를 이용할 수 있고, index를 이용해 요소를 가지고 올 수 있음
+- 문자열도 배열과 같이 메서드를 이용할 수 있고, `index`를 이용해 요소를 가지고 올 수 있음
 
 ### [문자열의 메서드와 속성]
 
@@ -187,5 +187,5 @@ chulsooNumber.padEnd(10, "0"); // "1234000000"
 
 2. toUpperCase, toLowerCase 기능
 
-   - 사용자가 검색 기능을 사용할 때 문자열의 toUpperCase, toLowerCase 사용
+   - 사용자가 검색 기능을 사용할 때 문자열의 `toUpperCase, toLowerCase` 사용
    - 컴퓨터에 저장된 단어, 내가 찾을 단어를 모두 소문자 또는 대문자로 변경하고 찾아냄
