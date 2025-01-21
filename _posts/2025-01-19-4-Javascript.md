@@ -181,11 +181,11 @@ chulsooNumber.padEnd(10, "0"); // "1234000000"
 
 ### ⭐️ 실무 예시
 
-#### 1. split() 기능
+#### 1. `split()` 기능
 
 - 아이디/이메일을 `rosa.ka**@gmail.com`처럼 \*\*마스킹해야 할 때 사용
 
-#### 2. toUpperCase, toLowerCase 기능
+#### 2. `toUpperCase, toLowerCase` 기능
 
 - 사용자가 검색 기능을 사용할 때 문자열의 `toUpperCase, toLowerCase` 사용
 - 컴퓨터에 저장된 단어, 내가 찾을 단어를 모두 소문자 또는 대문자로 변경하고 찾아냄
