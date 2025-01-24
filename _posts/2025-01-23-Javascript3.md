@@ -65,7 +65,7 @@ const hello = (name) => {
 
 > 자주 사용되는 함수를 자바스크립트에 내장하여 편리하게 이용할 수 있도록 한 것
 
-### 1. setTimeout
+## 1. setTimeout
 
 - **시간 지연 함수**로 입력 시간이 만료된 후 함수나 지정한 코드를 실행
 
@@ -73,7 +73,7 @@ const hello = (name) => {
 setTimeout(func, time);
 ```
 
-### 2. setInterval
+## 2. setInterval
 
 - **시간 반복 함수**로 입력한 시간마다 함수를 반복적으로 호출하거나 코드를 실행
 
@@ -81,7 +81,7 @@ setTimeout(func, time);
 setInterval(func, time);
 ```
 
-### 3. alert
+## 3. alert
 
 - 메세지를 지정할 수 있는 **경고 대화 상자**를 띄움
 
