@@ -5,8 +5,8 @@ date: 2025-01-24
 categories: Javascript
 ---
 
-<!-- precamp/class/03-javascript/07-signup.html,js 참고 -->
-<!-- precamp/class/03-javascript/08-phone.html,js 참고 -->
+<!-- precamp/class/03-javascript/07-signup.html,js 참고
+ precamp/class/03-javascript/08-phone.html,js 참고 -->
 
 # #이벤트 핸들러
 

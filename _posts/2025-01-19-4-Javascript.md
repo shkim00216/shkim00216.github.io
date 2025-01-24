@@ -196,9 +196,9 @@ chulsooNumber.padEnd(10, "0"); // "1234000000"
 
 ---
 
-<!-- precamp/class/03-javascript/02-object-array.js 참고 -->
-<!-- precamp/class/03-javascript/연습-03-object.js 참고 -->
-<!-- precamp/class/03-javascript/연습-04-object-in-arr.js 참고 -->
+<!-- precamp/class/03-javascript/02-object-array.js 참고
+ precamp/class/03-javascript/연습-03-object.js 참고
+ precamp/class/03-javascript/연습-04-object-in-arr.js 참고 -->
 
 # #객체
 
