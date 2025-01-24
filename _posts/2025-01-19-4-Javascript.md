@@ -5,9 +5,9 @@ date: 2025-01-19
 categories: Javascript
 ---
 
-<!-- precamp/class/03-javascript/01-variable.js 참고 -->
-
 # #변수와 상수
+
+<!-- precamp/class/03-javascript/01-variable.js 참고 -->
 
 - 변수 : 어떤 관계나 범위 안에서 여러가지 값으로 변할 수 있는 수
   - `var`, `let`

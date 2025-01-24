@@ -5,10 +5,10 @@ date: 2025-01-24
 categories: Javascript
 ---
 
+# #이벤트 핸들러
+
 <!-- precamp/class/03-javascript/07-signup.html,js 참고
  precamp/class/03-javascript/08-phone.html,js 참고 -->
-
-# #이벤트 핸들러
 
 > 함수는 `event`를 처리하거나 반응
 > 이벤트 핸들러는 **이벤트 청취자**, 즉 위와 같은 **이벤트가 발생하는것을 감지하는 역할**
