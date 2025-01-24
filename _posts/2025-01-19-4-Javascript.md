@@ -7,6 +7,8 @@ categories: Javascript
 
 # 자바스크립트
 
+<!-- precamp/class/03-javascript/01-variable.js 참고 -->
+
 ## #변수와 상수
 
 - 변수 : 어떤 관계나 범위 안에서 여러가지 값으로 변할 수 있는 수
@@ -65,6 +67,8 @@ classmate3 = "짱구"; // 성공!!
 - `snake_case` : my_money -> python
 
 ---
+
+<!-- precamp/class/03-javascript/연습-01-array.js 참고 -->
 
 ## #배열
 
@@ -149,6 +153,8 @@ classmates.map((data) => data + "어린이"); // ["철수어린이", "영희어�
 
 ---
 
+<!-- precamp/class/03-javascript/연습-02-email-split.js 참고 -->
+
 ## #문자열
 
 - 문자열도 배열과 같이 메서드를 이용할 수 있고, `index`를 이용해 요소를 가지고 올 수 있음
@@ -191,6 +197,10 @@ chulsooNumber.padEnd(10, "0"); // "1234000000"
 - 컴퓨터에 저장된 단어, 내가 찾을 단어를 모두 소문자 또는 대문자로 변경하고 찾아냄
 
 ---
+
+<!-- precamp/class/03-javascript/02-object-array.js 참고 -->
+<!-- precamp/class/03-javascript/연습-03-object.js 참고 -->
+<!-- precamp/class/03-javascript/연습-04-object-in-arr.js 참고 -->
 
 ## #객체
 
