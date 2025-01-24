@@ -5,9 +5,7 @@ date: 2025-01-23
 categories: Javascript
 ---
 
-# 자바스크립트
-
-## #함수
+# #함수
 
 > 우리가 직접 만드는 **기능**
 
@@ -22,9 +20,9 @@ function 함수이름(매개변수) {
 } /* 함수 안에 데이터 제공이 필요할 때 매개변수를 넣어 줌 */
 ```
 
-### [함수 작성 방법]
+## [함수 작성 방법]
 
-#### 1. 함수 선언식
+### 1. 함수 선언식
 
 ```javascript
 function hello(name) {
@@ -32,7 +30,7 @@ function hello(name) {
 } /* 호이스팅 문제로 인해 표현식 등장 */
 ```
 
-#### 2. 함수 표현식
+### 2. 함수 표현식
 
 ```javascript
 const hello = function (name) {
@@ -40,7 +38,7 @@ const hello = function (name) {
 }; // 익명함수
 ```
 
-#### 3. 화살표 함수
+### 3. 화살표 함수
 
 ```javascript
 const hello = (name) => {
@@ -63,7 +61,7 @@ const hello = (name) => {
 
 ---
 
-## #내장함수
+# #내장함수
 
 > 자주 사용되는 함수를 자바스크립트에 내장하여 편리하게 이용할 수 있도록 한 것
 
@@ -103,7 +101,7 @@ alert("이렇게 만드시면 경고창이 생겨요!");
 
 <!-- precamp/class/03-javascript/06-timer.js 참고 -->
 
-### [시간지연함수와 시간반복함수의 종료]
+## [시간지연함수와 시간반복함수의 종료]
 
 ```javascript
 // 시간지연함수 강제종료

@@ -9,7 +9,7 @@ categories: VSCode Install
 
 > VSCode 설치 링크 : <https://dingco.notion.site/01-146c86f40861819abdf7dd14bae5cd69?pvs=25#146c86f4086181e6aaa9ecf4a42edd24>
 
-## [Extensions]
+### [Extensions]
 
 - Auto Rename Tag : HTML 태그 수정 시 시작태그와 종료태그를 자동으로 함께 수정해주는 모듈
 - Code Spell Checker : 사전에 없거나 자주 사용되지 않는 단어가 사용되면 경고해주는 모듈
