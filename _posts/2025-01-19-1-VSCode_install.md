@@ -7,7 +7,7 @@ categories: VSCode Install
 
 # VSCode 설치
 
-> VSCode 설치 링크 : <https://dingco.notion.site/01-146c86f40861819abdf7dd14bae5cd69?pvs=25#146c86f4086181e6aaa9ecf4a42edd24>
+> 📌 VSCode 설치 링크 : <https://dingco.notion.site/01-146c86f40861819abdf7dd14bae5cd69?pvs=25#146c86f4086181e6aaa9ecf4a42edd24>
 
 ### [Extensions]
 
