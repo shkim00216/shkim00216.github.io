@@ -11,7 +11,7 @@ categories: Javascript
 
 ## [디바이스 사이즈 계산하는 법]
 
-<!-- CSS-JS/class-js/section04/04-01/.html 참고 -->
+<!-- CSS-JS/class-js/section04/04-01/02-device-height-dynamic.html 참고 -->
 
 - `window.innerWidth` : 현재 창의 너비
 - `window.innerHeight` : 현재 창의 높이
@@ -27,3 +27,73 @@ const rect = element.getBoundingClientRect();
 console.log(`Element Width: ${rect.width}, Element Height: ${rect.height}`);
 console.log(`Element Position: (${rect.top}, ${rect.left})`);
 ```
+
+# [디바이스 동적 스크롤 % 감지]
+
+<!-- CSS-JS/class-js/section04/04-01/03-scroll-floor.html 참고 -->
+
+- `document.documentElement.scrollHeight` : 전체 문서의 높이, 페이지에 스크롤 할 수 있는 전체 길이
+- `window.scollY` : 현재페이지에서 사용자가 스크롤한 수직 길이, 이 값이 0이면 페이지의 최상단이고 값이 커질수록 아래로 스크롤한 것
+- `document.documentElement.clientHeight` : 현재 뷰포트의 높이, 브라우저 창의 내부 높이, 스크롤바를 포함하지 않은 크기
+
+---
+
+# #모바일 감지
+
+<!-- CSS-JS/class-js/section04/04-02/01-viewport.html 참고 -->
+
+> **디바이스 모드** : 브라우저에서 모바일, 태블릿 등을 테스트하는 기능  
+> **뷰포트(viewport)** : 웹 페이지가 사용자에게 어떻게 표시되는지를 결정하는 영역
+
+## [meta]
+
+> **<meta> 태그** : HTML 문서의 메타데이터를 정의하는 데 사용  
+> **메타데이터** : 문서에 대한 정보 제공하며, 검색 엔진, 브라우저, 웹 크롤러 등에 유용한 정보를 전달
+
+- `name="viewport”` : 뷰포트 설정
+- `charset` : 문자 인코딩
+- `name="description”` : 페이지 설명
+- `name="keywords"` : 키워드
+- `name="copyright”` : 저작권
+- `name="author”` : 작성자
+- `property="og:title”, property="og:description”, property="og:image”` : 소셜 미디어 메타데이터
+
+## [뷰포트 설정 방법]
+
+- `width=device-width` : 뷰포트의 너비를 장치의 화면 너비에 맞춤
+- `initial-scale=1.0` : 페이지가 로드될 때의 초기 확대 비율 설정
+- `user-scalable=no` : 사용자가 페이지를 확대하거나 축소할 수 없도록 설정, 핀치 줌 기능 비활성화
+
+```html
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, user-scalable=no"
+/>
+```
+
+## [모바일 핀치줌 인아웃]
+
+<!-- CSS-JS/class-js/section04/04-02/02-pinch-zoom.html 참고 -->
+
+> **핀치줌(pinch zoom)** : 모바일 장치에서 손가락 두 개를 이용해 화면을 확대하거나 축소하는 제스처
+
+```javascript
+const JS_사진원본보기기능 = () => {
+    document.body.style = "background-color: black;"
+    document.getElementById("HTML_이미지").style = "width: 100%"
+    document.getElementsByName("viewport")[0].content = `
+        width=device-width,
+        initial-scale=1.0,
+        minimum-scale=1.0,
+        maximum-scale=3.0,
+        user-scalable=yes,
+}
+```
+
+## [가상키보드]
+
+> **가상키보드** : 모바일처럼 브라우저 높이를 변경하는 키보드
+
+[Google Chrome용 가상 키보드 설치](https://chromewebstore.google.com/detail/google-chrome-%EC%9A%A9-%EA%B0%80%EC%83%81-%ED%82%A4%EB%B3%B4%EB%93%9C/ecjkcanpimnagobhegghdeeiagffoidk?hl=ko)
+
+- 설치 후 확장프로그램에 추가하여 모바일 디바이스 모드일 때 사용
