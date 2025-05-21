@@ -114,9 +114,25 @@ navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options
 - `errorCallback` : 위치 정보를 가져오는 데 실패했을 때 호출되는 함수(필수 값 X)
 - `options` : 위치 정보를 가져올 때의 옵션을 설정할 수 있음(필수 값 X)
 
-## 💡 setTimeout vs setInterval
+## ⭐️ mousemove 이벤트
 
 <!-- CSS-JS/class-js/section05/05-02/03-timer.html 참고 -->
+
+> **mousemove** : 사용자가 마우스를 움직일 때마다 발생, 마우스의 현재 위치 추적 가능
+
+```javascript
+window.addEventListener("mousemove", (event) => {
+  const 가짜마우스 = document.getElementById("HTML_가짜마우스");
+  가짜마우스.style.top = `${
+    event.clientY + 5
+  }px`; /* 진짜마우스에서 5만큼 떨어뜨리기(아래 클릭 가능하도록) */
+  가짜마우스.style.left = `${
+    event.clientX + 5
+  }px`; /* 진짜마우스에서 5만큼 떨어뜨리기(아래 클릭 가능하도록) */
+});
+```
+
+## 💡 setTimeout vs setInterval
 
 |                | `setTimeout    `                                                            | `setInterval`                          |
 | :------------: | --------------------------------------------------------------------------- | -------------------------------------- |
