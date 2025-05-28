@@ -1,0 +1,123 @@
+---
+layout: post
+title: "[Javascript] 오픈 API와 메뉴 이동"
+date: 2025-05-28
+categories: Javascript
+---
+
+# #오픈 API
+
+> **오픈 API** : 다른 사람들이 만들어서 쓰라고 공개한 기능(함수)  
+> **API 주소** : 기능 실행 해주는 홈페이지 주소
+
+## [Endpoint]
+
+- `API`에서 데이터를 제공하거나 요청을 처리하는 특정 `URL` 경로
+- 각 엔드포인트는 `API`의 특정 기능을 수행하며, 요청을 처리하고 응답을 반환
+
+## [GET Method]
+
+<!-- CSS-JS/class-js/section06/06-01/01-sentence-api.html 참고 -->
+
+- `GET` 메소드는 서버에서 정보를 요청할 때 사용하는 `HTTP` 메소드
+- 데이터나 정보를 요청하고 서버가 응답으로 데이터를 반환
+- `GET` 요청은 주로 서버에서 데이터를 조회하거나 가져올 때 사용
+
+```javascript
+fetch("API주소")
+  .then((받아온결과) => 받아온결과.json())
+  .then((객체만뽑기) => {
+    console.log(객체만뽑기);
+  });
+```
+
+1. 홈페이지에 접속해서 받아오면 그때(`then`) 실행됨
+2. 홈페이지에 접속해서 받아오려면 인터넷 연결 필요
+
+### 📌 문장 API
+
+[KoreanJSON](https://koreanjson.com/) <!-- 서버 다운 -->
+
+- 특정 웹사이트나 서비스의 데이터를 프로그램적으로 접근할 수 있게 해주는 인터페이스
+- 웹 애플리케이션에서 문장이나 글, 뉴스, 블로그 게시물 등을 자동으로 가져오고 처리할 수 있음
+- 한국어 `JSON` 데이터를 제공하는 `API`로 다양한 `JSON` 데이터 형식으로 정보를 제공받을 수 있음
+
+## [POST Method]
+
+- `POST` 메소드는 서버에 데이터를 전송할 때 사용하는 `HTTP` 메소드
+- 주로 폼 제출이나 데이터 생성, 업데이트를 위해 사용
+- `POST` 요청은 요청 본문에서 서버에 데이터를 전달하고, 서버는 이 데이터를 처리한 후 응답을 반환
+
+```javascript
+fetch("https://example.com/api/posts", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    title: "새 게시물 제목",
+    content: "게시물 내용",
+  }),
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  });
+``;
+```
+
+### 📌 PUBLIC API 모음
+
+https://github.com/dl0312/open-apis-korea
+https://github.com/public-apis/public-apis
+
+- `Auth` 여부로 확인 가능
+- `CORS` 여부가 `yes`인 경우 사용해야 보안에 해당하지 않음
+
+📌 [강아지 이미지 API](https://dog.ceo/dog-api/)
+
+<!-- CSS-JS/class-js/section06/06-01/02-dog-api.html 참고 -->
+
+## [API 응용]
+
+<!-- CSS-JS/class-js/section06/06-01/03-dog-api-map.html 참고 -->
+
+> **API-Docs** : 내가 만든 기능 쓰라고 공개할 때, 같이 주는 설명서
+
+---
+
+# #메뉴 이동
+
+## [페이지 복사 방식 메뉴 이동]
+
+<!-- CSS-JS/class-js/section06/06-02/01-pagecopy1-diary.html, 01-pagecopy2-dog.html 참고 -->
+
+- `location.href...` 이용한 방식 : 다른 `URL`로 이동하게 되며, 브라우저가 새로운 페이지를 로드하게 됨
+- 이를 위해서 `header`나 `nav`와 같은 공통적인 `HTML` 부분은 재사용할 수 없고, 복사해서 사용해야 함
+
+## [메뉴 이동을 위한 iframe]
+
+<!-- CSS-JS/class-js/section06/06-02/02-iframe1-index.html, 02-iframe2-diary.html, 02-iframe3-dog.html 참고 -->
+
+> **iframe** : HTML 안에 다른 HTML 및 사이트주소 그려주는 박스
+
+```html
+<iframe src="http://..."></iframe>
+```
+
+### ❗️ iframe의 문제점
+
+- 전체 `iframe`의 `html` 파일이 불러와져서 `css`도 따로 지정해줘야 하는 불편함이 있음
+
+## [메뉴 이동을 위한 컴포넌트]
+
+<!-- CSS-JS/class-js/section06/06-02/03-component-index.html, 03-component-diary.js, 03-component-dog.js 참고 -->
+
+> **컴포넌트** : 재사용 가능한 독립적인 구성 요소(버튼, 입력 필드 등을 모듈화 해놓은 개념)
+
+### \* 컴포넌트의 특징
+
+1. 재사용성 : 여러곳에서 재사용 가능
+2. 독립성 : 독립적으로 동작, 의존성 최소화
+3. 캡슐화 : 내부 상태와 구현 세부 사항을 숨기고, 외부와의 상호작용을 명확하게 정의, 코드 복잡성 줄어듬
+4. 조합 가능성 : 여러 개의 컴포넌트를 조합해서 사용할 수 있음
