@@ -6,8 +6,11 @@
 .dark * {
   $dark_text_color: #f6f6f6;
   $dark_link_color: #4da3ff;
-  color: $dark_text_color;
   border-color: #e6e6e6;
+
+  p {
+    color: $dark_text_color;
+  }
 
   .about {
     img.light {
