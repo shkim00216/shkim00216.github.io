@@ -25,11 +25,11 @@
         {% endif %}
       </a>
       <h2 id="title">
-        <a href="{{ "/" | relative_url }}">{{ site.plainwhite.name }}</a>
+        <a href="{{ "/" | relative_url }}">Sohee</a>
       </h2>
       </div>
       {%- if site.plainwhite.tagline -%}
-      <p class="tagline">{{ site.plainwhite.tagline }}</p>
+      <p class="tagline">Publisher &<br>Front-end Developer</p>
       {%- endif -%}
       </div>
       {% capture footer %}
@@ -146,7 +146,7 @@
         </ul>
       </nav>
       {%- endif -%}
-      <p class="about-footer {{condensed_class}}">&copy;
+      <p class="gh {{condensed_class}}">&copy;
         {{ "now" | date: "%Y" }}</p>
       {%- if site.plainwhite.dark_mode -%}
       <div class="about-footer {{condensed_class}}">

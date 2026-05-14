@@ -10,7 +10,7 @@ sass:
   sass_dir: _sass
 plainwhite:
   name: sohee
-  tagline: Publisher And Front-end Developer
+  tagline: Publisher & Front-end Developer
   date_format: "%Y. %m. %d"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
