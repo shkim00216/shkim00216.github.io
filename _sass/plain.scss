@@ -225,7 +225,7 @@ main {
 .post-title {
   line-height: 1.2em;
   font-size: 28px;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   color: #222222;
 }
 .dark .post-title {
@@ -245,16 +245,16 @@ main {
   }
 }
 .posts > li {
-  padding: 16px 20px;
+  padding: 20px;
   border-radius: 20px;
   margin-bottom: 16px;
   border-bottom: 1px solid #ddd;
 }
 .posts > li:hover {
-  background-color: rgba($color: #000, $alpha: 0.1);
+  background-color: rgba($color: #000, $alpha: 0.05);
 }
 .dark .posts > li:hover {
-  background-color: rgba($color: #000, $alpha: 0.2);
+  background-color: rgba($color: #fff, $alpha: 0.1);
 }
 .post-container {
   padding-left: 30px;
