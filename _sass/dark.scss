@@ -9,12 +9,6 @@
   color: $dark_text_color;
   border-color: #e6e6e6;
 
-  a {
-    &:hover {
-      color: $dark_link_color;
-    }
-  }
-
   .about {
     img.light {
       display: none;
@@ -27,10 +21,6 @@
 
   .post p {
     color: #ddd;
-  }
-
-  .social [class^="icon-"] {
-    color: $dark_text_color;
   }
 
   #posts-label {
@@ -65,7 +55,11 @@
   }
 
   a {
-    color: $dark_link_color;
+    color: $dark_text_color;
+
+    &:hover {
+      color: $dark_link_color;
+    }
   }
 
   #title a {
