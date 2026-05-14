@@ -93,6 +93,17 @@
     }
   }
 
+  .post {
+    h1, h3, h4, h5, h6, li {
+      color: $dark_text_color;
+    }
+  }
+
+  .post-date {
+    color: #a5a5a5;
+    margin: 0 0 10px;
+  }
+
   .posts-labelgroup:hover {
     i {
       color: white;
