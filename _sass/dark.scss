@@ -1,16 +1,9 @@
 .dark {
-  background-color: #171717;
+  background-color: var(--black);
 }
 
 .dark,
 .dark * {
-  $dark_text_color: #f6f6f6;
-  $dark_link_color: #4da3ff;
-  border-color: #e6e6e6;
-
-  p {
-    color: $dark_text_color;
-  }
 
   // header logo 변경
   .header {
@@ -23,121 +16,94 @@
     }
   }
 
-  .post p {
-    color: #ddd;
-  }
+  // header
+  .header {
+    background-color: var(--black);
 
-  #posts-label {
-    color: $dark_text_color;
-    border-bottom: 1px solid #272727;
-  }
-
-  @import "ext/solarized-dark";
-
-  .highlight,
-  .highlight * {
-    background-color: #00080a;
-    color: #93a1a1;
-  }
-
-  div.highlight-dark {
-    padding: 5px 20px;
-  }
-
-  pre.highlight-dark,
-  code {
-    font-family: "Consolas", Menlo, monospace;
-    line-height: 1.4em;
-    tab-size: 4;
-  }
-
-  .post-categories {
-    li {
-      background-color: #f0f3fa;
-      color: #6382cb;
+    &__title {
+      color: var(--white);
     }
-  }
 
-  a {
-    color: $dark_text_color;
+    &__btn {
+      background-color: var(--dark-sub);
 
-    &:hover {
-      color: $dark_link_color;
-    }
-  }
+      &::before {
+        background-color: var(--white);
+      }
 
-  #title a {
-    color: #fff;
+      &-link {
+        color: var(--white);
+      }
 
-    &:hover {
-      color: $dark_link_color;
-    }
-  }
+      &:hover {
+        background-color: var(--white);
 
-  .posts-labelgroup {
-    border-bottom: 1px solid #333;
+        &::before {
+          background-color: var(--black);
+        }
 
-    .search-results {
-      background-color: #333;
-
-      a {
-        color: white;
-
-        &:hover {
-          background-color: #171717;
+        .header__btn-link {
+          color: var(--black);
         }
       }
     }
 
-    .search-section i {
-      background-color: transparent;
+    .dark-mode {
+      background-color: var(--point);
+    }
+
+    &__search {
+      .search {
+        &__section {
+          background-color: var(--dark-sub);
+
+          .search__icon {
+            background-color: var(--white);
+          }
+
+          >input {
+            color: var(--white);
+          }
+        }
+      }
     }
   }
 
-  .post {
-    h1, h3, h4, h5, h6, li {
-      color: $dark_text_color;
-    }
-  }
+  .content {
 
-  .post-date {
-    color: #a5a5a5;
-    margin: 0 0 10px;
-  }
+    // home - list
+    .list {
+      &-item {
+        &__text {
+          color: var(--white);
+        }
 
-  .posts-labelgroup:hover {
-    i {
-      color: white;
-    }
-
-    input {
-      color: white;
-    }
-  }
-
-  .posts-labelgroup.focus-within {
-    .search-section {
-      background-color: #333;
+        &__tag {
+          color: var(--white);
+          background-color: var(--black);
+        }
+      }
     }
 
-    input {
-      color: $dark_text_color;
+    // home - detail
+    .detail {
+      &__back-btn {
+        &:hover {
+          color: var(--white);
+
+          &::before {
+            background-color: var(--white);
+          }
+        }
+      }
+
+      &__text {
+        color: var(--white);
+      }
+
+      &__tag {
+        color: var(--white);
+      }
     }
-
-    i {
-      color: white;
-    }
-  }
-}
-
-.dark table {
-
-  th,
-  td {
-    border: 1px solid #333;
-  }
-
-  th {
-    background-color: #0d0d0d;
   }
 }

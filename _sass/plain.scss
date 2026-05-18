@@ -4,6 +4,7 @@
 
 :root {
   --black: #111111;
+  --dark-sub: #282828;
   --white: #ffffff;
   --line: #B9B9B9;
   --bg: #F6F6F6;
@@ -47,21 +48,11 @@ li {
 }
 
 a {
-  color: var(--point);
   transition: 0.3s;
   text-decoration: none;
 
   &:hover {
-    color: var(--black);
     text-decoration: none;
-  }
-}
-
-h2 {
-  margin: 40px 0 20px;
-
-  @media screen and (max-width: $mobileW) {
-    margin: 30px 0 16px;
   }
 }
 
@@ -302,7 +293,7 @@ main {
   }
 
   .content {
-    max-width: 1440px;
+    max-width: 1300px;
     width: 100%;
     margin: 0 auto;
 
@@ -318,6 +309,7 @@ main {
       padding: 0 20px;
     }
 
+    // home - list
     .list {
       width: 100%;
       padding: 30px 0;
@@ -435,6 +427,7 @@ main {
       }
     }
 
+    // home - detail
     .detail {
       width: 100%;
       padding-top: 30px;
