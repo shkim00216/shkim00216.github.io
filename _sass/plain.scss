@@ -109,6 +109,10 @@ main {
 
       &-img {
         width: 86px;
+
+        &.dark {
+          display: none;
+        }
       }
     }
 
