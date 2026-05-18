@@ -221,6 +221,10 @@ main {
       background-color: var(--black);
       transition: .3s;
       cursor: pointer;
+
+      &:hover {
+        background-color: var(--sub);
+      }
     }
 
     &__search {
