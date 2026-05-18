@@ -3,6 +3,7 @@ layout: default
 ---
 
 {%- if page.title -%}
+{%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
 <ul class="list">
   {%- for post in site.posts -%}
   <li class="list-item">
