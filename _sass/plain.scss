@@ -49,9 +49,11 @@ li {
 a {
   color: var(--point);
   transition: 0.3s;
+  text-decoration: none;
 
   &:hover {
     color: var(--black);
+    text-decoration: none;
   }
 }
 

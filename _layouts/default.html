@@ -19,6 +19,8 @@
           <a href="{{ "/" | relative_url}}">
             <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="로고 이미지" class="header__logo-img light">
             <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image_dark }}" alt="로고 이미지 화이트" class="header__logo-img dark">
+          </a>
+          <a href="{{ "/" | relative_url}}">
             <h2 class="header__title">{ Development Blog }<span class="header__year">© 2026</span></h2>
           </a>
         </div>
@@ -57,9 +59,6 @@
     <section class="content">
       {{ content }}
     </section>
-    <footer class="{{condensed_class}}">
-      {{ footer }}
-    </footer>
   </main>
   {% if site.plainwhite.dark_mode %}
   <script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
