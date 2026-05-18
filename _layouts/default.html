@@ -27,6 +27,7 @@
           </a>
         </div>
         <div class="header__search">
+          {% if site.plainwhite.search %}
           <div class="search">
             <div class="search__section">
               <span class="search__icon"></span>
@@ -46,6 +47,7 @@
               style="display: none"
             ></div>
           </div>
+          {% endif %}
         </div>
         <ul class="header__btns">
           <li class="header__btn header__btn--git">
