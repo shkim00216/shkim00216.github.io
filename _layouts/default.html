@@ -13,155 +13,47 @@
 
 <body>
   <main class="container">
-    <section class="about">
-      <div class="about-header {{condensed_class}}">
-      <div class="about-title">
-      <a href="{{ "/" | relative_url}}">
-        {% if site.plainwhite.portfolio_image_dark and site.plainwhite.dark_mode %}
-        <img class="light" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
-        <img class="dark" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image_dark }}" alt="{{ site.plainwhite.name }}" />
-        {% else %}
-        <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
-        {% endif %}
-      </a>
-      <h2 id="title">
-        <a href="{{ "/" | relative_url }}">Sohee</a>
-      </h2>
-      </div>
-      {%- if site.plainwhite.tagline -%}
-      <p class="tagline">Publisher &<br>Front-end Developer</p>
-      {%- endif -%}
-      </div>
-      {% capture footer %}
-      {%- if site.plainwhite.social_links != '' -%}
-      <ul class="social about-footer {{condensed_class}}">
-        {%- if site.plainwhite.social_links.github -%}
-        <a href="https://github.com/{{ site.plainwhite.social_links.github }}" target="_blank">
-          <li>
-            <i class="icon-github-circled"></i>
+    <header class="header {{condensed_class}}">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="{{ "/" | relative_url}}">
+            <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="로고 이미지" class="header__logo-img light">
+            <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image_dark }}" alt="로고 이미지 화이트" class="header__logo-img dark">
+            <h2 class="header__title">{ Development Blog }<span class="header__year">© 2026</span></h2>
+          </a>
+        </div>
+        <div class="header__search">
+          <div class="search">
+            <div class="search__section">
+              <span class="search__icon"></span>
+              <input
+                type="text"
+                name="search"
+                id="searchbar"
+                autocomplete="off"
+                aria-label="search in posts"
+                placeholder="Search Posts..."
+              />
+            </div>
+            <div
+              class="search__results"
+              id="search-results"
+              data-placeholder="No Results"
+              style="display: none"
+            ></div>
+          </div>
+        </div>
+        <ul class="header__btns">
+          <li class="header__btn header__btn--git">
+            <a href="https://github.com/{{ site.plainwhite.social_links.github }}" target="_blank" class="header__btn-link">Github</a>
           </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.gitlab -%}
-        <a href="https://gitlab.com/{{ site.plainwhite.social_links.gitlab }}" target="_blank">
-          <li>
-            <i class="icon-gitlab"></i>
+          <li class="header__btn header__btn--mail">
+            <a href="mailto:{{ site.plainwhite.social_links.email }}" target="_blank" class="header__btn-link">E-mail</a>
           </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.linkedIn -%}
-        <a href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedIn }}" target="_blank">
-          <li>
-            <i class="icon-linkedin-squared"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.twitter -%}
-        <a href="https://twitter.com/{{ site.plainwhite.social_links.twitter }}" target="_blank">
-          <li>
-            <i class="icon-twitter-squared"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.instagram -%}
-        <a href="https://instagram.com/{{ site.plainwhite.social_links.instagram }}" target="_blank">
-          <li>
-            <i class="icon-instagram"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.facebook -%}
-        <a href="https://facebook.com/{{ site.plainwhite.social_links.facebook }}" target="_blank">
-          <li>
-            <i class="icon-facebook-squared"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.youtube -%}
-        <a href="https://youtube.com/{{ site.plainwhite.social_links.youtube }}" target="_blank">
-          <li>
-            <i class="icon-youtube"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.pinterest -%}
-        <a href="https://pinterest.com/{{ site.plainwhite.social_links.pinterest }}" target="_blank">
-          <li>
-            <i class="icon-pinterest-squared"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.dribbble -%}
-        <a href="https://dribbble.com/{{ site.plainwhite.social_links.dribbble }}" target="_blank">
-          <li>
-            <i class="icon-dribbble"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.flickr -%}
-        <a href="https://flickr.com/{{ site.plainwhite.social_links.flickr }}" target="_blank">
-          <li>
-            <i class="icon-flickr"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.telegram -%}
-        <a href=" https://t.me/{{ site.plainwhite.social_links.telegram }}" target="_blank">
-          <li>
-            <i class="icon-telegram"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.soundcloud -%}
-        <a href=" https://soundcloud.com/{{ site.plainwhite.social_links.soundcloud }}" target="_blank">
-          <li>
-            <i class="icon-soundcloud"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.email -%}
-        <a href="mailto:{{ site.plainwhite.social_links.email }}" target="_blank">
-          <li>
-            <i class="icon-mail-alt"></i>
-          </li>
-        </a>
-        {%- endif -%}
-        {%- if site.plainwhite.social_links.stackoverflow -%}
-        <a href="https://stackoverflow.com/users/{{ site.plainwhite.social_links.stackoverflow }}" target="_blank">
-          <li>
-            <i class="icon-stack-overflow"></i>
-          </li>
-        </a>
-        {%- endif -%}
-      </ul>
-      {%- endif -%}
-      {%- if site.plainwhite.navigation -%}
-      <nav class="navigation about-footer {{condensed_class}}">
-        <ul>
-          {% for link in site.plainwhite.navigation %}
-          <li>
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          </li>
-          {% endfor %}
+          <li class="dark-mode" onclick="toggleDarkMode()"></li>
         </ul>
-      </nav>
-      {%- endif -%}
-      <p class="gh {{condensed_class}}">&copy;
-        {{ "now" | date: "%Y" }}</p>
-      {%- if site.plainwhite.dark_mode -%}
-      <div class="about-footer {{condensed_class}}">
-        <p>Dark Mode
-          <i class="icon-moon"></i>
-          <label class="switch">
-            <input type="checkbox" class="dark-mode-toggle">
-            <span class="slider round" onclick="toggleDarkMode()"></span>
-          </label>
-        </p>
       </div>
-      {%- endif -%}
-      {% endcapture %}
-      {{ footer }}
-    </section>
+    </header>
     <section class="content">
       {{ content }}
     </section>
