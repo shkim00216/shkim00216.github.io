@@ -58,6 +58,7 @@ main {
 
     a {
       text-decoration: none;
+
       &:hover {
         text-decoration: none;
       }
@@ -333,6 +334,14 @@ main {
 
         @media screen and (max-width: $mobileW) {
           padding: 20px 10px;
+        }
+
+        a {
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: none;
+          }
         }
 
         &__date {

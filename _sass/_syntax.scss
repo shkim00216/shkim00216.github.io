@@ -1,37 +1,12 @@
 @import "ext/solarized-light";
 
 .highlight {
-  background-color: #f4f4f4;
-}
-
-div.highlight {
-  padding: 5px 20px;
-  margin-bottom: 10px;
-}
-pre.highlight,
-code {
-  font-family: "Consolas", Menlo, monospace;
-  line-height: 1.4em;
-  tab-size: 4;
-}
-
-.language-plaintext {
+  background-color: var(--bg);
   border-radius: 4px;
-  background-color: #f4f4f4;
-  color: #cb4b16;
-  padding: 2px 4px;
 }
-.dark .language-plaintext {
-  background-color: #00080a;
-  color: #cb4b16;
-}
-blockquote {
-  border-left: 3px solid #b1c9ef;
-  margin: 0;
-  background-color: #f0f3fa;
-  padding: 0 1rem;
-}
-.dark blockquote {
-  border-left: 3px solid #638ecb;
-  background-color: #00080a;
+
+.dark {
+  .highlight {
+    background-color: var(--dark-sub);
+  }
 }
