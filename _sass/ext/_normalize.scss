@@ -369,11 +369,21 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-// <fieldset> 코드 -> 안씀
+// <fieldset> 코드
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  margin: 16px 0 16px 20px;
+  padding: 16px;
+  background-color: var(--white);
+}
+
+.dark {
+  fieldset {
+    border: 1px solid var(--line);
+    background-color: var(--dark-sub);
+    color: var(--white);
+  }
 }
 
 // <legend> 코드 -> 안씀
