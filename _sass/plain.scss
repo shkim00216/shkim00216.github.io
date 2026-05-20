@@ -396,6 +396,10 @@ main {
           @media screen and (max-width: $mobileW) {
             font-size: 20px;
           }
+
+          &:before {
+            display: none;
+          }
         }
 
         &__tag {
