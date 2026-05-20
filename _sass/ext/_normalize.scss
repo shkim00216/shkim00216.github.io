@@ -1,3 +1,8 @@
+$bigScreenW: 1520px;
+$tabletW: 991px;
+$mobileW: 768px;
+$smallMobileW: 480px;
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -91,6 +96,11 @@ h2 {
   transition: .3s;
   cursor: pointer;
 
+  @media screen and (max-width: $mobileW) {
+    font-size: 20px;
+    margin: 30px 0 16px;
+  }
+
   &::before {
     color: var(--point-light);
     content: '#';
@@ -111,6 +121,11 @@ h3 {
   font-weight: 600;
   line-height: 1.5;
   margin: 24px 0 16px 10px;
+
+  @media screen and (max-width: $mobileW) {
+    font-size: 18px;
+    margin: 20px 0 16px 10px;
+  }
 }
 
 // <h4> 코드
@@ -120,6 +135,10 @@ h4 {
   font-weight: 600;
   line-height: 1.5;
   margin: 16px 0 16px 20px;
+
+  @media screen and (max-width: $mobileW) {
+    font-size: 16px;
+  }
 }
 
 .dark {
@@ -134,8 +153,12 @@ h4 {
     color: var(--black);
     font-size: 16px;
     font-weight: 400;
-    line-height: 2;
+    line-height: 1.8;
     margin: 16px 0 16px 20px;
+
+    @media screen and (max-width: $mobileW) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -177,7 +200,11 @@ ol {
     color: var(--black);
     font-size: 16px;
     font-weight: 400;
-    line-height: 2;
+    line-height: 1.8;
+
+    @media screen and (max-width: $mobileW) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -251,6 +278,10 @@ hr {
   background-repeat: no-repeat;
   background-position: bottom;
   margin: 40px 0;
+
+  @media screen and (max-width: $mobileW) {
+    margin: 30px 0;
+  }
 }
 
 // <pre>, <code> 코드
@@ -398,6 +429,10 @@ blockquote {
   background-color: rgba($color: #DA7656, $alpha: 0.05);
   border-left: 4px solid var(--point);
   padding: 16px 20px;
+
+  @media screen and (max-width: $mobileW) {
+    padding: 10px 16px;
+  }
 
   p {
     margin: 0 !important;
