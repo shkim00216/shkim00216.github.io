@@ -1,7 +1,7 @@
-  @import "ext/solarized-dark";
-
-  .dark {
+.dark {
   background-color: var(--black);
+
+  @import "ext/solarized-dark";
 }
 
 .dark,
