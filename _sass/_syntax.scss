@@ -6,6 +6,12 @@
   margin-left: 20px;
 }
 
+pre {
+  .highlight {
+    margin-left: 0;
+  }
+}
+
 .dark {
   .highlight {
     background-color: var(--dark-sub);
