@@ -77,7 +77,7 @@ inputField.addEventListener("keydown", function (event) {
 3. 콘솔 API (Console API)
   1. `console.log()` : 디버깅 목적으로 `JavaScript`에서 메시지를 콘솔에 출력할 수 있게 해줌
 
-<mark>⚠️ 내장되어 있는 브라우저API는 다 window 기반이라 앞에 window가 생략되어 있다는 것 인지</mark>
+⚠️ <mark>내장되어 있는 브라우저 API는 다 window 기반이라 앞에 window가 생략되어 있다는 것 인지</mark>
 
 ### navigator
 
