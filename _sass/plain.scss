@@ -24,6 +24,7 @@ $smallMobileW: 480px;
 *:before,
 *:after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
