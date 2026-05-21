@@ -80,74 +80,74 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-    const h2Elements = document.querySelectorAll('.post h2');
-    const tocContainer = document.getElementById('toc');
+      const h2Elements = document.querySelectorAll('.post h2');
+      const tocContainer = document.getElementById('toc');
 
-    window.addEventListener('scroll', function () {
-      // 현재 스크롤 위치가 100px을 넘었는지 확인 (수치는 원하시는 대로 조절 가능)
-      if (window.scrollY > 100) {
-        // 스크롤을 내리면 위쪽으로 올림
-        tocContainer.style.setProperty('--floating-top', '20%');
-      } else {
-        // 스크롤이 맨 위로 올라오면 다시 원래대로 300px 위치로 복귀
-        tocContainer.style.setProperty('--floating-top', '300px');
-      }
-    });
-
-    // h2 아이디와 메뉴 링크를 매핑해서 저장할 객체
-    const menuMap = {};
-
-    // 1. 메뉴 자동 생성 및 id 부여
-    h2Elements.forEach((h2, index) => {
-      if (!h2.id) {
-        h2.id = `heading-${index}`;
-      }
-
-      const menuLink = document.createElement('a');
-      menuLink.setAttribute('href', `#${h2.id}`);
-      menuLink.innerText = h2.innerText;
-
-      tocContainer.appendChild(menuLink);
-
-      // 나중에 스크롤 감지 시 바로 꺼내 쓸 수 있도록 매핑 저장
-      menuMap[h2.id] = menuLink;
-    });
-
-    // 2. 스크롤 감지 및 현재 구역 활성화 로직 (IntersectionObserver)
-    let activeId = '';
-
-    const observerOptions = {
-      root: null,
-      // 화면 상단에서 10% ~ 하단 70% 사이 영역에 h2가 들어오면 감지
-      // 이 값을 조절해서 활성화 타이밍을 맞출 수 있습니다.
-      rootMargin: '-10% 0px -70% 0px',
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        // h2가 감지 영역에 진입했을 때
-        if (entry.isIntersecting) {
-          activeId = entry.target.id;
-          updateActiveMenu(activeId);
+      window.addEventListener('scroll', function () {
+        // 현재 스크롤 위치가 100px을 넘었는지 확인 (수치는 원하시는 대로 조절 가능)
+        if (window.scrollY > 100) {
+          // 스크롤을 내리면 위쪽으로 올림
+          tocContainer.style.setProperty('--floating-top', '20%');
+        } else {
+          // 스크롤이 맨 위로 올라오면 다시 원래대로 300px 위치로 복귀
+          tocContainer.style.setProperty('--floating-top', '300px');
         }
       });
-    }, observerOptions);
 
-    // 모든 h2 요소를 관찰 대상 등록
-    h2Elements.forEach((h2) => observer.observe(h2));
+      // h2 아이디와 메뉴 링크를 매핑해서 저장할 객체
+      const menuMap = {};
 
-    // 실제 메뉴에 active 클래스를 켜고 끄는 함수
-    function updateActiveMenu(id) {
-      // 기존에 켜져 있던 active 클래스 모두 제거
-      Object.values(menuMap).forEach(link => link.classList.remove('is-active'));
+      // 1. 메뉴 자동 생성 및 id 부여
+      h2Elements.forEach((h2, index) => {
+        if (!h2.id) {
+          h2.id = `heading-${index}`;
+        }
 
-      // 현재 구역에 해당하는 메뉴에 active 클래스 추가
-      if (menuMap[id]) {
-        menuMap[id].classList.add('is-active');
+        const menuLink = document.createElement('a');
+        menuLink.setAttribute('href', `#${h2.id}`);
+        menuLink.innerText = `#${h2.innerText}`;
+
+        tocContainer.appendChild(menuLink);
+
+        // 나중에 스크롤 감지 시 바로 꺼내 쓸 수 있도록 매핑 저장
+        menuMap[h2.id] = menuLink;
+      });
+
+      // 2. 스크롤 감지 및 현재 구역 활성화 로직 (IntersectionObserver)
+      let activeId = '';
+
+      const observerOptions = {
+        root: null,
+        // 화면 상단에서 10% ~ 하단 70% 사이 영역에 h2가 들어오면 감지
+        // 이 값을 조절해서 활성화 타이밍을 맞출 수 있습니다.
+        rootMargin: '-10% 0px -70% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          // h2가 감지 영역에 진입했을 때
+          if (entry.isIntersecting) {
+            activeId = entry.target.id;
+            updateActiveMenu(activeId);
+          }
+        });
+      }, observerOptions);
+
+      // 모든 h2 요소를 관찰 대상 등록
+      h2Elements.forEach((h2) => observer.observe(h2));
+
+      // 실제 메뉴에 active 클래스를 켜고 끄는 함수
+      function updateActiveMenu(id) {
+        // 기존에 켜져 있던 active 클래스 모두 제거
+        Object.values(menuMap).forEach(link => link.classList.remove('is-active'));
+
+        // 현재 구역에 해당하는 메뉴에 active 클래스 추가
+        if (menuMap[id]) {
+          menuMap[id].classList.add('is-active');
+        }
       }
-    }
-  });
+    });
   </script>
 </body>
 
