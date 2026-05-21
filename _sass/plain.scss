@@ -103,10 +103,7 @@ main {
 
       &-img {
         width: 86px;
-
-        img {
-          max-width: 100%;
-        }
+        max-width: 100%;
 
         &.dark {
           display: none;
