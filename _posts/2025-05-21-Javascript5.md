@@ -70,12 +70,12 @@ inputField.addEventListener("keydown", function (event) {
 <!-- CSS-JS/class-js/section05/05-02/01-browser-api.html 참고 -->
 
 1. 웹 스토리지 API (Web Storage API)
-  1. `localStorage` : 브라우저에 대한 데이터를 저장할 수 있는 API, 저장된 데이터는 브라우저를 닫아도 유지됨
-  2. `sessionStorage` : 브라우저 세션 동안만 데이터를 저장, 브라우저를 닫으면 데이터가 사라짐
+    1. `localStorage` : 브라우저에 대한 데이터를 저장할 수 있는 API, 저장된 데이터는 브라우저를 닫아도 유지됨
+    2. `sessionStorage` : 브라우저 세션 동안만 데이터를 저장, 브라우저를 닫으면 데이터가 사라짐
 2. DOM API (Document Object Model API)
-  1. `document.getElementById()` : 웹 페이지의 HTML 요소를 `JavaScript`로 접근하고 조작할 수 있게 해줌
+    1. `document.getElementById()` : 웹 페이지의 HTML 요소를 `JavaScript`로 접근하고 조작할 수 있게 해줌
 3. 콘솔 API (Console API)
-  1. `console.log()` : 디버깅 목적으로 `JavaScript`에서 메시지를 콘솔에 출력할 수 있게 해줌
+    1. `console.log()` : 디버깅 목적으로 `JavaScript`에서 메시지를 콘솔에 출력할 수 있게 해줌
 
 ⚠️ <mark>내장되어 있는 브라우저 API는 다 window 기반이라 앞에 window가 생략되어 있다는 것 인지</mark>
 
