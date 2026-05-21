@@ -134,6 +134,12 @@ h3 {
   }
 }
 
+.dark {
+  h3 {
+    color: var(--point-bg);
+  }
+}
+
 // <h4> 코드
 h4 {
   color: var(--black);
