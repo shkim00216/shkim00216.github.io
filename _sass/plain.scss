@@ -15,7 +15,7 @@
   --point-bg: #FBF9F7;
 }
 
-$bigScreenW: 1520px;
+$bigScreenW: 1280px;
 $tabletW: 991px;
 $mobileW: 768px;
 $smallMobileW: 480px;
@@ -102,6 +102,10 @@ main {
 
       &-img {
         width: 86px;
+
+        img {
+          max-width: 100%;
+        }
 
         &.dark {
           display: none;
@@ -303,7 +307,7 @@ main {
   }
 
   .content {
-    max-width: 1300px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 
