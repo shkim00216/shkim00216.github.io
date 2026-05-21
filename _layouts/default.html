@@ -94,7 +94,7 @@
 
         const menuLink = document.createElement('a');
         menuLink.setAttribute('href', `#${h2.id}`);
-        menuLink.innerText = h2.innerText;
+        menuLink.innerText = `# + ${h2.innerText}`;
 
         tocContainer.appendChild(menuLink);
 
