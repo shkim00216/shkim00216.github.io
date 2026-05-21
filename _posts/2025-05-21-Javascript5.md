@@ -5,7 +5,7 @@ date: 2025-05-21
 categories: Javascript
 ---
 
-# #키보드 감지
+## 키보드 감지
 
 <!-- CSS-JS/class-js/section05/05-01/01-keyboard.html 참고 -->
 
@@ -21,7 +21,7 @@ document.addEventListener("keydown", function (event) {
 
 📌 [키 밸류 확인](https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values)
 
-## [입력창에서의 엔터키 적용]
+### 입력창에서의 엔터키 적용
 
 <!-- CSS-JS/class-js/section05/05-01/02-keyboard-with-input.html 참고 -->
 
@@ -34,61 +34,56 @@ inputField.addEventListener("keydown", function (event) {
 });
 ```
 
-## [폼]
+### 폼
 
 <!-- CSS-JS/class-js/section05/05-01/03-form1.html 참고 -->
 <!-- CSS-JS/class-js/section05/05-01/03-form2-with-button.html 참고 -->
 
-> **폼(Form)** : 회원가입, 게시글 등에서 입력창 그룹으로 묶은 요소
+<abbr title="form">**폼(Form)** : 회원가입, 게시글 등에서 입력창 그룹으로 묶은 요소</abbr>
 
-### ⭐️ 폼에서 사용되는 버튼
+#### ⭐️ 폼에서 사용되는 버튼
 
 - `submit`: 버튼을 클릭하면 폼을 제출하는 역할, type 속성 기본값`submit`, URL로 데이터 전송(`default`값)
 - `button` : 특별한 기능이 없는 일반 버튼, js와 함께 사용하여 특정 동작 수행하도록 설정
 - `reset` : 폼의 모든 입력 필드를 초기값으로 돌리는 버튼
 
-### 💡 action 생략방법
+#### 💡 action 생략방법
 
 - `action` : 폼 데이터가 전송될 URL을 지정하는 속성, 생략 시 현재 페이지로 전송
 - `action` 속성에 `#`을 사용하면 페이지의 맨 위로 스크롤됨, 페이지 내에서 다른 동작 수행할 때 유용
 
 ---
 
-# #브라우저 API
+## 브라우저 API
 
-## [API]
+### API
 
-> **API(Application Programming Interface)** : 미리 만들어 놓은 기능(함수)
+<abbr title="api">**API(Application Programming Interface)** : 미리 만들어 놓은 기능(함수)</abbr>
 
 - 브라우저 `API` : 브라우저에 만들어져 있는 기능, `console.log(), localStorage.getItem()`
 - 백엔드 `API` : 백엔드 개발자가 프론트엔드 개발자에게 쓰라고 만들어준 기능
 - 오픈 `API` : 다른사람이 만들어서 공개한 기능
 - 외부 `API` : 외부 기관에 허락 맡거나 돈 내고 쓰는 기능
 
-### ⭐️ 웹 API
+#### ⭐️ 웹 API
 
 <!-- CSS-JS/class-js/section05/05-02/01-browser-api.html 참고 -->
 
 1. 웹 스토리지 API (Web Storage API)
-
-- `localStorage` : 브라우저에 대한 데이터를 저장할 수 있는 API, 저장된 데이터는 브라우저를 닫아도 유지됨
-- `sessionStorage` : 브라우저 세션 동안만 데이터를 저장, 브라우저를 닫으면 데이터가 사라짐
-
+  1. `localStorage` : 브라우저에 대한 데이터를 저장할 수 있는 API, 저장된 데이터는 브라우저를 닫아도 유지됨
+  2. `sessionStorage` : 브라우저 세션 동안만 데이터를 저장, 브라우저를 닫으면 데이터가 사라짐
 2. DOM API (Document Object Model API)
-
-- `document.getElementById()` : 웹 페이지의 HTML 요소를 `JavaScript`로 접근하고 조작할 수 있게 해줌
-
+  1. `document.getElementById()` : 웹 페이지의 HTML 요소를 `JavaScript`로 접근하고 조작할 수 있게 해줌
 3. 콘솔 API (Console API)
+  1. `console.log()` : 디버깅 목적으로 `JavaScript`에서 메시지를 콘솔에 출력할 수 있게 해줌
 
-- `console.log()` : 디버깅 목적으로 `JavaScript`에서 메시지를 콘솔에 출력할 수 있게 해줌
+<mark>⚠️ 내장되어 있는 브라우저API는 다 window 기반이라 앞에 window가 생략되어 있다는 것 인지</mark>
 
-#### ❗️ 내장되어 있는 브라우저API는 다 window 기반이라 앞에 window가 생략되어 있다는 것 인지
+### navigator
 
-## [navigator]
+<abbr title="navigator">**navigator** : 블루투스, 내위치, USB 등을 연동할 수 있는 브라우저 API</abbr>
 
-> **navigator** : 블루투스, 내위치, USB 등을 연동할 수 있는 브라우저 API
-
-### 1. navigator.clipboard
+#### 1. navigator.clipboard
 
 <!-- CSS-JS/class-js/section05/05-02/02-navigator1-clipboard.html 참고 -->
 
@@ -99,7 +94,7 @@ inputField.addEventListener("keydown", function (event) {
 navigator.clipboard.writeText(text):
 ```
 
-### 2. navigator.geolocation
+#### 2. navigator.geolocation
 
 <!-- CSS-JS/class-js/section05/05-02/02-navigator2-geolocation.html 참고 -->
 
@@ -114,11 +109,11 @@ navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options
 - `errorCallback` : 위치 정보를 가져오는 데 실패했을 때 호출되는 함수(필수 값 X)
 - `options` : 위치 정보를 가져올 때의 옵션을 설정할 수 있음(필수 값 X)
 
-## ⭐️ mousemove 이벤트
+### ⭐️ mousemove 이벤트
 
 <!-- CSS-JS/class-js/section05/05-02/03-timer.html 참고 -->
 
-> **mousemove** : 사용자가 마우스를 움직일 때마다 발생, 마우스의 현재 위치 추적 가능
+<abbr title="mousemove">**mousemove** : 사용자가 마우스를 움직일 때마다 발생, 마우스의 현재 위치 추적 가능</abbr>
 
 ```javascript
 window.addEventListener("mousemove", (event) => {
@@ -132,7 +127,7 @@ window.addEventListener("mousemove", (event) => {
 });
 ```
 
-## 💡 setTimeout vs setInterval
+### 💡 setTimeout vs setInterval
 
 |                | `setTimeout    `                                                            | `setInterval`                          |
 | :------------: | --------------------------------------------------------------------------- | -------------------------------------- |
