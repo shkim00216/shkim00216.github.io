@@ -12,17 +12,21 @@
 {%- endif -%}
 
 <body>
+  <nav class="floating" id="toc">
+  </nav>
   <main class="container">
     <header class="header {{condensed_class}}">
       <div class="header__inner">
         <div class="header__logo">
-          <a href="{{ "/" | relative_url}}">
+          <a href="{{ " /" | relative_url}}">
             {% if site.plainwhite.portfolio_image_dark and site.plainwhite.dark_mode %}
-            <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="로고 이미지" class="header__logo-img light">
-            <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image_dark }}" alt="로고 이미지 화이트" class="header__logo-img dark">
+            <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="로고 이미지"
+              class="header__logo-img light">
+            <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image_dark }}" alt="로고 이미지 화이트"
+              class="header__logo-img dark">
             {% endif %}
           </a>
-          <a href="{{ "/" | relative_url}}">
+          <a href="{{ " /" | relative_url}}">
             <h2 class="header__title">{ Development Blog }<span class="header__year">© 2026</span></h2>
           </a>
         </div>
@@ -31,30 +35,21 @@
           <div class="search">
             <div class="search__section">
               <span class="search__icon"></span>
-              <input
-                type="text"
-                name="search"
-                id="searchbar"
-                autocomplete="off"
-                aria-label="search in posts"
-                placeholder="Search Posts..."
-              />
+              <input type="text" name="search" id="searchbar" autocomplete="off" aria-label="search in posts"
+                placeholder="Search Posts..." />
             </div>
-            <div
-              class="search__results"
-              id="search-results"
-              data-placeholder="No Results"
-              style="display: none"
-            ></div>
+            <div class="search__results" id="search-results" data-placeholder="No Results" style="display: none"></div>
           </div>
           {% endif %}
         </div>
         <ul class="header__btns">
           <li class="header__btn header__btn--git">
-            <a href="https://github.com/{{ site.plainwhite.social_links.github }}" target="_blank" class="header__btn-link">Github</a>
+            <a href="https://github.com/{{ site.plainwhite.social_links.github }}" target="_blank"
+              class="header__btn-link">Github</a>
           </li>
           <li class="header__btn header__btn--mail">
-            <a href="mailto:{{ site.plainwhite.social_links.email }}" target="_blank" class="header__btn-link">E-mail</a>
+            <a href="mailto:{{ site.plainwhite.social_links.email }}" target="_blank"
+              class="header__btn-link">E-mail</a>
           </li>
           <li class="dark-mode" onclick="toggleDarkMode()"></li>
         </ul>
@@ -65,7 +60,7 @@
     </section>
   </main>
   {% if site.plainwhite.dark_mode %}
-  <script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
+  <script type="text/javascript" src="{{ " /assets/js/darkmode.js" | relative_url }}"></script>
   {% endif %}
 
   {%- if site.plainwhite.analytics_id -%}
@@ -79,9 +74,70 @@
   {%- endif -%}
 
   {% if site.plainwhite.search %}
-  <script src="{{ "/assets/js/simple-jekyll-search.min.js" | relative_url }}"></script>
-  <script src="{{ "/assets/js/search.js" | relative_url }}"></script>
+  <script src="{{ " /assets/js/simple-jekyll-search.min.js" | relative_url }}"></script>
+  <script src="{{ " /assets/js/search.js" | relative_url }}"></script>
   {% endif %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const h2Elements = document.querySelectorAll('.post h2');
+      const tocContainer = document.getElementById('toc');
+
+      // h2 아이디와 메뉴 링크를 매핑해서 저장할 객체
+      const menuMap = {};
+
+      // 1. 메뉴 자동 생성 및 id 부여
+      h2Elements.forEach((h2, index) => {
+        if (!h2.id) {
+          h2.id = `heading-${index}`;
+        }
+
+        const menuLink = document.createElement('a');
+        menuLink.setAttribute('href', `#${h2.id}`);
+        menuLink.innerText = h2.innerText;
+
+        tocContainer.appendChild(menuLink);
+
+        // 나중에 스크롤 감지 시 바로 꺼내 쓸 수 있도록 매핑 저장
+        menuMap[h2.id] = menuLink;
+      });
+
+      // 2. 스크롤 감지 및 현재 구역 활성화 로직 (IntersectionObserver)
+      let activeId = '';
+
+      const observerOptions = {
+        root: null,
+        // 화면 상단에서 10% ~ 하단 70% 사이 영역에 h2가 들어오면 감지
+        // 이 값을 조절해서 활성화 타이밍을 맞출 수 있습니다.
+        rootMargin: '-10% 0px -70% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          // h2가 감지 영역에 진입했을 때
+          if (entry.isIntersecting) {
+            activeId = entry.target.id;
+            updateActiveMenu(activeId);
+          }
+        });
+      }, observerOptions);
+
+      // 모든 h2 요소를 관찰 대상 등록
+      h2Elements.forEach((h2) => observer.observe(h2));
+
+      // 실제 메뉴에 active 클래스를 켜고 끄는 함수
+      function updateActiveMenu(id) {
+        // 기존에 켜져 있던 active 클래스 모두 제거
+        Object.values(menuMap).forEach(link => link.classList.remove('is-active'));
+
+        // 현재 구역에 해당하는 메뉴에 active 클래스 추가
+        if (menuMap[id]) {
+          menuMap[id].classList.add('is-active');
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>

@@ -114,6 +114,12 @@ h2 {
   }
 }
 
+.post {
+  h2 {
+    scroll-margin-top: 100px; // 클릭 및 이동 시 헤더에 가려지는 오류 수정
+  }
+}
+
 // <h3> 코드
 h3 {
   color: var(--point-deep);
