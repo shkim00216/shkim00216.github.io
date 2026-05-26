@@ -628,7 +628,8 @@ main {
   right: 30px;
   z-index: 99;
   border: 1px solid var(--line);
-  background-color: transparent;
+  background-color: rgba($color: #ffffff, $alpha: 0.2);
+  backdrop-filter: blur(5px);
   outline: none;
   color: var(--line);
   cursor: pointer;
