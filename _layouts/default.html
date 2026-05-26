@@ -59,6 +59,9 @@
       {{ content }}
     </section>
   </main>
+  <button id="backToTop" title="Go to top">
+    <span></span>
+  </button>
   {% if site.plainwhite.dark_mode %}
   <script type="text/javascript" src="{{ " /assets/js/darkmode.js" | relative_url }}"></script>
   {% endif %}
@@ -147,6 +150,27 @@
           menuMap[id].classList.add('is-active');
         }
       }
+
+      // backtotop
+      const backToTopBtn = document.getElementById("backToTop");
+
+      // 1. 스크롤 감지하여 버튼 보여주기/숨기기
+      window.addEventListener("scroll", () => {
+        // 현재 스크롤 위치가 200px을 넘으면 show 클래스 추가, 아니면 제거
+        if (window.scrollY > 200) {
+          backToTopBtn.classList.add("show");
+        } else {
+          backToTopBtn.classList.remove("show");
+        }
+      });
+
+      // 2. 버튼 클릭 시 최상단으로 부드럽게 이동
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth" /* 부드러운 스크롤 효과 */
+        });
+      });
     });
   </script>
 </body>
