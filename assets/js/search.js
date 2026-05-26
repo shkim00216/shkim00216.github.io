@@ -17,7 +17,7 @@ window.onload = function () {
         json: '{{ "/search.json" | relative_url }}',
         searchResultTemplate: '<a href="{url}" target="_blank">{title}</a>',
         noResultsText: '',
-        searchFields: ['title', 'categories']
+        searchFields: ['title', 'tags']
     });
 
     /* hack ios safari unfocus */
