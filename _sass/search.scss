@@ -6,6 +6,60 @@ main {
   min-height: 100vh; // Click Anywhere to Unfocus
 }
 
+.search {
+  .search__results {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    width: 100%;
+    min-height: 50px;
+    box-shadow: 0 1px 2px 0 rgba(32, 33, 36, 0.28);
+    z-index: 3;
+    padding: 10px 0;
+    font-size: 15px;
+    border: 1px solid rgba(223,225,229,0);
+
+    &:empty::before {
+      content: attr(data-placeholder);
+      padding: 8px 25px 8px 14px;
+    }
+
+    a {
+      padding: 8px 25px 8px 14px;
+      text-decoration: none;
+      display: flex;
+      background-color: transparent;
+
+      &:hover {
+        color: black;
+        background-color: #eee;
+      }
+
+      &::before {
+        content: '\e805';
+        font-family: "fontello";
+        font-style: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+        margin-right: 14px;
+        padding: 0 3px;
+        color: #9aa0a6;
+      }
+    }
+  }
+}
+
 .posts-labelgroup {
   /* Firefox Flex Hack */
   @-moz-document url-prefix() { 
